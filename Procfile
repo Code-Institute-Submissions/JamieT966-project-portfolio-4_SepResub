@@ -1,1 +1,1 @@
-web: gunicorn modern-landscapes.wsgi
+web: gunicorn modern_landscapes.wsgi
