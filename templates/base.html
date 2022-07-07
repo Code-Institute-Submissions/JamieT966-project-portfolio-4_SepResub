@@ -7,32 +7,39 @@
 
     <title>Modern Landscapes</title>
     <link rel="shortcut icon" href="{% static 'favicon/favicon.ico' %}" />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="{% static 'js/script.js' %}"></script>
-
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
 <body>
     <header>
-        <h1>Hello</h1>
+
+        <img class="float-start modern-logo" src="https://res.cloudinary.com/du0modwwh/image/upload/v1657199111/logo_hif1du.png" alt="Modern Landscapes Logo">
+        <!-- Navigation -->
+        <nav class="nav justify-content-end">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="{% url 'booking' %}">Booking</a>
+    
+          </nav>
+
     </header>
+
+    {% block content %}
+    {% endblock %}
+
 </body>
 
-<footer class="footer mt-auto py-3 footer-bg">
-    <h3>Footer Test</h3>
+<footer>
+    <i class="fa fa-envelope"></i>
 </footer>
 
+<script src="{% static 'js/script.js' %}"></script>
+<!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
 </html>
