@@ -1,3 +1,4 @@
+/* Header nav and logo */
 header {
     overflow: auto;
     background-color: rgb(188, 188, 188);
@@ -5,4 +6,14 @@ header {
 
 .modern-logo {
     height: 60px;
+}
+
+.book-btn {
+    margin: 20px auto;
+}
+
+/* Intro/ hero section */
+.intro-section {
+    height: 30rem;
+    text-align: center;
 }
