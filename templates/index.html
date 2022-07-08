@@ -1,11 +1,25 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="intro-section p-3 container-fluid d-flex justify-content-center">
+<!-- Into/ Hero section -->
+<div class="intro-section p-3 container-fluid d-flex justify-content-center align-items-center">
     <div>
         <h1>Modern Landscapes</h1>
-        <h4>Making your garden better</h4>
+        <h4>Making your garden better.</h4>
+        <p>Book your FREE garden consultation today.</p>
         <button type="button" class="btn btn-success book-btn d-flex justify-content-center">Book Now</button>
     </div>
 </div>
+
+<!-- Featured article section/ Our Work -->
+
+<div class="container-fluid d-flex justify-content-center bg-secondary py-4">
+    <div class="row align-items-center text-center">
+        <div class="col-12 col-sm-8">See previous work completed by Modern Landscapes by ckicking on our work using the button to the right.</div>
+        <div class="col-12 col-sm-4">
+            <button type="button" class="btn btn-success book-btn d-flex justify-content-center">Our Work</button>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
