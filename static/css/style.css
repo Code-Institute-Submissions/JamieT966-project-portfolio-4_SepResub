@@ -17,3 +17,23 @@ header {
     height: 30rem;
     text-align: center;
 }
+
+.hero-image {
+    /* background: url('https://res.cloudinary.com/du0modwwh/image/upload/v1657274458/hero4_uog6c0.jpg') no-repeat fixed 10% 100%; */
+}
+
+/* Our Work section */
+
+.our-work {
+    height: 10rem;
+}
+
+/* Value section  */
+
+.value-box {
+    height: 120px;
+    width: 120px;
+    background-color: rgb(28, 181, 79);
+    border-radius: 50%;
+    margin: 0 auto;
+}

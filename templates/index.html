@@ -1,19 +1,21 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<!-- Into/ Hero section -->
-<div class="intro-section p-3 container-fluid d-flex justify-content-center align-items-center">
-    <div>
-        <h1>Modern Landscapes</h1>
-        <h4>Making your garden better.</h4>
-        <p>Book your FREE garden consultation today.</p>
-        <button type="button" class="btn btn-success book-btn d-flex justify-content-center">Book Now</button>
+
+<!-- Intro/ Hero section -->
+<div class="jumbotron-fluid hero-image">
+    <div class="intro-section p-3 container-fluid d-flex justify-content-center align-items-center">
+        <div>
+            <h1>Modern Landscapes</h1>
+            <h4>Making your garden better.</h4>
+            <p>Book your FREE garden consultation today.</p>
+            <button type="button" class="btn btn-success book-btn d-flex justify-content-center">Book Now</button>
+        </div>
     </div>
 </div>
 
 <!-- Featured article section/ Our Work -->
-
-<div class="container-fluid d-flex justify-content-center bg-secondary py-4">
+<div class="container-fluid d-flex justify-content-center bg-secondary py-4 our-work">
     <div class="row align-items-center text-center">
         <div class="col-12 col-sm-8">See previous work completed by Modern Landscapes by ckicking on our work using the button to the right.</div>
         <div class="col-12 col-sm-4">
@@ -21,5 +23,29 @@
         </div>
     </div>
 </div>
+
+<!-- Value provided section -->
+<div class="container-fluid">
+    <div class="row align-items-center justify-content-center text-center">
+        <div class="col-12 py-5">
+            <h3>Why you should choose Modern Landscapes</h3>
+        </div>
+            <div class="col-md-4 col-12">
+                <div class="value-box"></div>
+                <h5 class="py-3">Value Prop 1</h5>
+            </div>
+            <div class="col-md-4 col-12">
+                <div class="value-box"></div>
+                <h5 class="py-3">Value Prop 2</h5>
+            </div>
+            <div class="col-md-4 col-12">
+                <div class="value-box"></div>
+                <h5 class="py-3">Value Prop 3</h5>
+            </div>
+    </div>
+</div>
+
+<!-- Testimonials Section -->
+
 
 {% endblock %}
