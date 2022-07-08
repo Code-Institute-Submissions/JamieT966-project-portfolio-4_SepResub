@@ -37,3 +37,19 @@ header {
     border-radius: 50%;
     margin: 0 auto;
 }
+
+/* Testimonials section */
+
+.test-box {
+    height: 80px;
+    width: 80px;
+    background-color: aqua;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 577px) {
+    .test-box-all {
+      display: none;
+    }
+  }
