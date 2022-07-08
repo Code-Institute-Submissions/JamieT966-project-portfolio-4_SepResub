@@ -15,10 +15,13 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
-<body>
+<!-- Taken from locks-of-lush project, unsure if working -->
+<body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-light navbar-expand-sm bg-light">
         <!-- Logo -->
-        <img class="float-start modern-logo" src="https://res.cloudinary.com/du0modwwh/image/upload/v1657222106/logo-60_yhpaay.png" alt="Modern Landscapes Logo">
+        <a href="{% url 'home' %}">
+            <img class="float-start modern-logo" src="https://res.cloudinary.com/du0modwwh/image/upload/v1657222106/logo-60_yhpaay.png" alt="Modern Landscapes Logo">
+        </a>
         <!-- Taken from Bootstrap module -->
         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span></button>
@@ -40,8 +43,39 @@
 </body>
 
 <footer>
-    <i class="fa fa-envelope"></i>
+    <div class="container-fluid mb-2">
+        <div class="row align-items-center justify-content-center">
+                <div class="col-md-4 col-12 row text-start site-links d-sm-none d-md-flex">
+                    <strong>Site Links:</strong> 
+                    <a href="{% url 'home' %}">Home</a>
+                    <a href="#">Our Work</a>
+                    <a href="#">Contact</a>
+                    <a href="{% url 'booking' %}">Book Now</a>
 
+                </div>
+                <div class="col-sm-4 col-12 d-flex align-items-end justify-content-center">
+                    <!-- Facebook -->
+                    <a class="socials">
+                        <i class="fab fa-facebook-f p-2"> </i>
+                    </a>
+                    <!-- Instagram -->
+                    <a class="socials">
+                        <i class="fab fa-instagram p-2"> </i>
+                    </a>
+                    <!-- LinkedIn +-->
+                    <a class="social">
+                        <i class="fab fa-linkedin-in p-2"> </i>
+                    </a>
+                </div>
+                <div class="col-sm-4 col-12 d-flex justify-content-end">
+                    <a href="{% url 'home' %}">
+                        <img class="float-start modern-logo" src="https://res.cloudinary.com/du0modwwh/image/upload/v1657222106/logo-60_yhpaay.png" alt="Modern Landscapes Logo">
+                    </a>
+                </div>
+        </div>
+    </div>
+
+<!-- Static JavaScript file -->
 <script src="{% static 'js/script.js' %}"></script>
 <!-- Bootsrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

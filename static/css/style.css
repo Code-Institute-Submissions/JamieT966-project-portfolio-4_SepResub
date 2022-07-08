@@ -47,3 +47,19 @@ header {
     border-radius: 50%;
     margin: 0 auto;
 }
+
+/* Footer */
+a {
+    color: rgb(0, 0, 0);
+}
+.site-links {
+    font-size: .8rem;
+}
+
+.socials {
+    font-size: 1.5rem;
+}
+
+.fa-linkedin-in {
+    font-size: 1.6rem;
+}
