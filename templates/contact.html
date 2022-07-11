@@ -7,22 +7,23 @@
     </div>
 </div>
 
-<form class="col-6 contact-form">
+<form method="POST" class="col-6 contact-form">
+    {% csrf_token %}
     <div class="form-group">
         <label for="exampleInputEmail1">Name</label>
-        <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+        <input name="name" type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp" required>
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
     </div>
     <div class="form-group">
       <label for="exampleInputPhone">Phone number</label>
-      <input type="number" class="form-control" id="exampleInputPhone">
+      <input name="phone" type="number" class="form-control" id="exampleInputPhone">
     </div>
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Message</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+        <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="2" required></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
