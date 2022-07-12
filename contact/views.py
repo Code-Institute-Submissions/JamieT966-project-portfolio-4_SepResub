@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import ContactForm
+from django.contrib import messages
 
 def contact_page_view(request):
     if request.method == "POST":
@@ -14,7 +15,5 @@ def contact_page_view(request):
         contact_method.phone = phone
         contact_method.message = message
         contact_method.save()
-        # return render(request, 'contact.html')
-        return HttpResponse('Message sent')
-
+        messages.success(request, 'Thanks for getting in touch. A member of the Modern Landscapes team will get back to you shortly.')
     return render(request, 'contact.html')

@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+
+{% include 'messages.html' %}
+
 <div class="container">
     <div class="col-12 text-center pt-4">
         <h4>Contact Us</h4>
@@ -19,7 +22,7 @@
     </div>
     <div class="form-group">
       <label for="exampleInputPhone">Phone number</label>
-      <input name="phone" type="number" class="form-control" id="exampleInputPhone">
+      <input name="phone" type="number" class="form-control" id="exampleInputPhone" required>
     </div>
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Message</label>
