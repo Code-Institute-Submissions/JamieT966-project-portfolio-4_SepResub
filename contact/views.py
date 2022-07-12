@@ -15,5 +15,5 @@ def contact_page_view(request):
         contact_method.phone = phone
         contact_method.message = message
         contact_method.save()
-        messages.success(request, 'Thanks for getting in touch. A member of the Modern Landscapes team will get back to you shortly.')
+        messages.error(request, 'Thanks for getting in touch. A member of the Modern Landscapes team will get back to you shortly.')
     return render(request, 'contact.html')
