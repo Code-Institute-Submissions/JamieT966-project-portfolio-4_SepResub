@@ -9,4 +9,4 @@ class Booking(models.Model):
     selected_date = models.DateTimeField("Selected Date: mm/dd/yyyy", auto_now_add=False, auto_now=False, blank=True, null=True)
 
     def __str__(self):
-        return self.selected_date
+        return self.name
