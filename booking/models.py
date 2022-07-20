@@ -2,7 +2,7 @@ from django.db import models
 from datetime import datetime, date
 
 class Booking(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, blank=False)
     email = models.EmailField()
     phone = models.CharField(max_length=10)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False, blank=True)

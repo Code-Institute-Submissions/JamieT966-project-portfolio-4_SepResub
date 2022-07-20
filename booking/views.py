@@ -8,12 +8,12 @@ def booking_page_view(request):
     return render(request, 'booking.html', {'db': db})
 
 def booking_form(request):
-    form = display_booking_form(request.POST)
+    form = display_booking_form(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
             return render(request, 'index.html', {'form':form})#PLACEHOLDER, NEED TO REPLACE WITH THANKS PAGE
 
     else:
-        form = display_booking_form(request.POST)
+        form = display_booking_form(request.POST or None)
     return render(request, 'booking.html', {'form':form})

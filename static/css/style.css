@@ -69,3 +69,10 @@ a {
 .contact-form {
     margin: 0 auto;
 }
+
+/* Booking Form  */
+
+.booking_form {
+    list-style-type: none;
+    color: red;
+}
