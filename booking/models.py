@@ -18,7 +18,7 @@ class Booking(models.Model):
     name = models.CharField(max_length=100, blank=False)
     email = models.EmailField()
     phone = PhoneNumberField()
-    date_choice = models.DateField("Selected Date:", auto_now_add=False, auto_now=False, blank=False, null=True)
+    date_choice = models.DateField("Date Choice:", auto_now_add=False, auto_now=False, blank=False, null=True)
     time_choice = models.CharField(choices=TIME_CHOICES, max_length=100)
 
     def __str__(self):
