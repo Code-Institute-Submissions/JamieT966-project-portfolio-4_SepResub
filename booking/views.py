@@ -5,7 +5,7 @@ from .forms import display_booking_form
 
 def booking_page_view(request):
     form_info = Booking.objects.all()
-    form_class = display_booking_form
+    form_class = display_booking_form()
     return render(request, 'booking.html', {'form_info': form_info})
 
 def booking_form(request):
@@ -13,7 +13,7 @@ def booking_form(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return render(request, 'index.html', {'form':form}) #PLACEHOLDER, NEED TO REPLACE WITH THANKS PAGE
+            return render(request, 'index.html', {'form':form})#PLACEHOLDER, NEED TO REPLACE WITH THANKS PAGE
 
     else:
         form = display_booking_form(request.POST or None)

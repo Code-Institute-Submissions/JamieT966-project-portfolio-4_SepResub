@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime, date, time
+from phonenumber_field.modelfields import PhoneNumberField
 
 TIME_CHOICES = (
     ('9:00', '9:00'),
@@ -16,7 +17,7 @@ TIME_CHOICES = (
 class Booking(models.Model):
     name = models.CharField(max_length=100, blank=False)
     email = models.EmailField()
-    phone = models.CharField(max_length=10)
+    phone = PhoneNumberField()
     date_choice = models.DateField("Selected Date:", auto_now_add=False, auto_now=False, blank=False, null=True)
     time_choice = models.CharField(choices=TIME_CHOICES, max_length=100)
 
