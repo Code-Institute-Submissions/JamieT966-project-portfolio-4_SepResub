@@ -3,13 +3,17 @@
 {% block content %}
 <div class="container">
     <div class="col-12 text-center pt-4">
-        <h4>Booking</h4>
+        <h4>Booking Form</h4>
     </div>
 </div>
 
 <div class="container-fluid d-flex justify-content-center booking_form">
     <div class="col-8 text-start pt-4 form-group "> 
-        <h1>This is the booking page</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-success book-btn">Submit</button>
+        </form>
     </div>
 </div>
 
