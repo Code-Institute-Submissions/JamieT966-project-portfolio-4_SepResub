@@ -76,3 +76,7 @@ a {
     list-style-type: none;
     margin: 0 auto;
 }
+
+.errorlist {
+    color: red;
+}
