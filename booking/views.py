@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Booking
 from .forms import DisplayBookingForm
+from django.contrib import messages
 
 def BookingPageView(request):
     return render(request, 'booking.html')
@@ -16,6 +17,7 @@ def BookingForm(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
+            # messages.success(request, 'Thanks for getting in touch. A member of the Modern Landscapes team will get back to you shortly.')
             return render(request, 'booking.html', {'form':form})#PLACEHOLDER, NEED TO REPLACE WITH THANKS PAGE
 
     else:
