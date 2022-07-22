@@ -2,14 +2,13 @@ from django import forms
 from .models import Booking
 from django.forms import ModelForm
 
-
 class DateInput(forms.DateInput):
     """
     Method for displaying date picker found on Stack Overflow by user: "avi"
     """
     input_type = 'date'
 
-class display_booking_form(forms.ModelForm):
+class DisplayBookingForm(forms.ModelForm):
     class Meta:
         model = Booking
         fields = ('name', 'email', 'phone', 'date_choice', 'time_choice',)

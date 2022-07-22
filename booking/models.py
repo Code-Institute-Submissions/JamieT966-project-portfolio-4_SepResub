@@ -1,6 +1,8 @@
 from django.db import models
 from datetime import datetime, date, time
 from phonenumber_field.modelfields import PhoneNumberField
+from django.core.validators import MinValueValidator, ValidationError
+
 
 TIME_CHOICES = (
     ('9:00', '9:00'),
