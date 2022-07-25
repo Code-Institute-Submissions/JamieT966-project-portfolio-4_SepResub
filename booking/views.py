@@ -26,4 +26,23 @@ def BookingForm(request):
 
 
 def MyBooking(request):
-    return render(request, 'my_booking.html')
+    if 'book_ref' in request.GET:
+        book_ref = request.GET['book_ref']
+        reference_match = Booking.objects.filter(booking_id__icontains = book_ref)
+        return render(request, 'my_booking.html', {'reference_match':reference_match})
+    else:
+        reference_match = Booking.objects.all()
+        return render(request, 'my_booking.html')
+
+
+def home(request):
+    if 'q' in request.GET:
+        q=request.GET['q']
+        posts=Post.objects.filter(title__icontains=q)
+    else:
+        posts=Post.objects.all()
+    # Pagintion
+    paginator=Paginator(posts,2)
+    page_number=request.GET.get('page')
+    posts_obj=paginator.get_page(page_number)
+    return render(request,'home.html',{'posts':posts_obj})

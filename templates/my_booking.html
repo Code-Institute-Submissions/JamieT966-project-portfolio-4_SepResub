@@ -6,4 +6,33 @@
         <h4>My Booking</h4>
     </div>
 </div>
+
+<form class="col-6 contact-form">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="exampleInputEmail1">Enter Booking Reference</label>
+        <input name="book_ref" type="text" class="form-control" placeholder="Booking Reference" aria-describedby="" required>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+{% for reference_match in reference_match %}
+
+<div class="container-fluid text-center pt-4">
+    <div>
+        <p>{{ reference_match.name }}</p>
+        <p>{{ reference_match.email }}</p>
+        <p>{{ reference_match.date_choice }}</p>
+        <p>{{ reference_match.time_choice }}</p>
+    </div>
+</div>
+
+<div class="container-fluid text-center">
+    <div class="btn-group" role="group" aria-label="Edit and delete buttons for bookings">
+        <button type="button" class="btn btn-info">Edit</button>
+        <div class="p-2"></div>
+        <button type="button" class="btn btn-danger pl-2">Delete</button>
+    </div>
+</div>
+{% endfor %}
 {% endblock %}
