@@ -32,5 +32,6 @@ def MyBooking(request):
         reference_match = Booking.objects.filter(booking_id__icontains = book_ref)
         return render(request, 'my_booking.html', {'reference_match':reference_match})
     else:
+        # CURRENTLY BOOK_REF LINKED TO INPUT NOT BUTTON, HAVE TO FIND WAY TO GET THIS TO WORK BELOW
         # messages.error(request, 'This is not a recognised booking reference, please try again.')
         return render(request, 'my_booking.html')
