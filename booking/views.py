@@ -23,3 +23,7 @@ def BookingForm(request):
     else:
         form = DisplayBookingForm(request.POST or None)
     return render(request, 'booking_form.html', {'form':form})
+
+
+def MyBooking(request):
+    return render(request, 'my_booking.html')
