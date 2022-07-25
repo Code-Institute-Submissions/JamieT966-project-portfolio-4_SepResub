@@ -33,16 +33,3 @@ def MyBooking(request):
     else:
         reference_match = Booking.objects.all()
         return render(request, 'my_booking.html')
-
-
-def home(request):
-    if 'q' in request.GET:
-        q=request.GET['q']
-        posts=Post.objects.filter(title__icontains=q)
-    else:
-        posts=Post.objects.all()
-    # Pagintion
-    paginator=Paginator(posts,2)
-    page_number=request.GET.get('page')
-    posts_obj=paginator.get_page(page_number)
-    return render(request,'home.html',{'posts':posts_obj})

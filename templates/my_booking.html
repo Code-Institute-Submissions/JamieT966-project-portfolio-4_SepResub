@@ -7,11 +7,11 @@
     </div>
 </div>
 
-<form class="col-6 contact-form">
+<form class="col-6 contact-form pt-5">
     {% csrf_token %}
     <div class="form-group">
         <label for="exampleInputEmail1">Enter Booking Reference</label>
-        <input name="book_ref" type="text" class="form-control" placeholder="Booking Reference" aria-describedby="" required>
+        <input name="book_ref" type="text" class="form-control" placeholder="Booking Reference" aria-describedby="enter booking reference here" required>
     </div>
     <button type="submit" class="btn btn-success">Submit</button>
 </form>
@@ -29,7 +29,7 @@
 
 <div class="container-fluid text-center">
     <div class="btn-group" role="group" aria-label="Edit and delete buttons for bookings">
-        <button type="button" class="btn btn-info">Edit</button>
+        <button type="button" class="btn btn-success">Edit</button>
         <div class="p-2"></div>
         <button type="button" class="btn btn-danger pl-2">Delete</button>
     </div>
