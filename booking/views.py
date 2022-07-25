@@ -32,6 +32,5 @@ def MyBooking(request):
         reference_match = Booking.objects.filter(booking_id__icontains = book_ref)
         return render(request, 'my_booking.html', {'reference_match':reference_match})
     else:
-        reference_match = Booking.objects.all()
-        # raise book_ref[].ValidationError('That is not a valid booking reference')
+        # messages.error(request, 'This is not a recognised booking reference, please try again.')
         return render(request, 'my_booking.html')
