@@ -98,3 +98,12 @@ a {
 .errorlist {
     color: red;
 }
+
+/* My booking page  */
+
+.my-booking-body {
+    background-color: #346434;
+    color: #fafafa;
+    padding: 10px;
+    border-radius: 10px;
+}

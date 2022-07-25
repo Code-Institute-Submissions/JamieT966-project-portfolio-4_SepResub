@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Booking
 from .forms import DisplayBookingForm
 from django.contrib import messages
+from django.core.exceptions import ValidationError
 
 def BookingPageView(request):
     return render(request, 'booking.html')
@@ -32,4 +33,5 @@ def MyBooking(request):
         return render(request, 'my_booking.html', {'reference_match':reference_match})
     else:
         reference_match = Booking.objects.all()
+        # raise book_ref[].ValidationError('That is not a valid booking reference')
         return render(request, 'my_booking.html')

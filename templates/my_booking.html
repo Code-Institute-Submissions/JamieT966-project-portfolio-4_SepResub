@@ -18,20 +18,20 @@
 
 {% for reference_match in reference_match %}
 
-<div class="container-fluid text-center pt-4">
-    <div>
-        <p>{{ reference_match.name }}</p>
-        <p>{{ reference_match.email }}</p>
-        <p>{{ reference_match.date_choice }}</p>
-        <p>{{ reference_match.time_choice }}</p>
-    </div>
-</div>
+<div class="container-fluid text-center pt-4 my-booking-box">
+    <div class="col-4 mx-auto my-booking-body">
+        <div class="">
+            <p>{{ reference_match.name }}</p>
+            <p>{{ reference_match.email }}</p>
+            <p>{{ reference_match.date_choice }}</p>
+            <p>{{ reference_match.time_choice }}</p>
+        </div>
 
-<div class="container-fluid text-center">
-    <div class="btn-group" role="group" aria-label="Edit and delete buttons for bookings">
-        <button type="button" class="btn btn-success">Edit</button>
-        <div class="p-2"></div>
-        <button type="button" class="btn btn-danger pl-2">Delete</button>
+        <div class="btn-group" role="group" aria-label="Edit and delete buttons for bookings">
+            <button type="button" class="btn btn-success">Edit</button>
+            <div class="p-2"></div>
+            <button type="button" class="btn btn-danger pl-2">Delete</button>
+        </div>
     </div>
 </div>
 {% endfor %}
