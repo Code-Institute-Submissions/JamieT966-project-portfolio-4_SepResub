@@ -24,7 +24,6 @@ def BookingForm(request):
             email = form.cleaned_data['email']
             date_choice = form.cleaned_data['date_choice']
             time_choice = form.cleaned_data['time_choice']
-            booking_id = form.cleaned_data['booking_id']
             form.save()
 
             send_mail(
