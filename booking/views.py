@@ -4,6 +4,9 @@ from .models import Booking
 from .forms import DisplayBookingForm
 from django.contrib import messages
 from django.core.exceptions import ValidationError
+from django.core.mail import send_mail
+from django.conf import settings
+
 
 def BookingPageView(request):
     return render(request, 'booking.html')
@@ -18,6 +21,12 @@ def BookingForm(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
+
+            send_mail('Booking Confirmation', 
+            f'Hi {Booking.name} this is a test mail', 
+            'modernlandscapesgardens@gmail.com', 
+            ['hepec91564@5k2u.com'],
+            fail_silently=False)
             # messages.success(request, 'Thanks for getting in touch. A member of the Modern Landscapes team will get back to you shortly.')
             return render(request, 'booking.html', {'form':form})#PLACEHOLDER, NEED TO REPLACE WITH THANKS PAGE
 
