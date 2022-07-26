@@ -14,7 +14,7 @@ class DisplayBookingForm(forms.ModelForm):
         fields = ('name', 'email', 'phone', 'date_choice', 'time_choice',)
 
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter your name'}),
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter your name', 'name':'name'}),
             'email': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter your email address'}),
             'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter your phone number'}),
             'date_choice': DateInput(attrs={'class': 'form-control'}),

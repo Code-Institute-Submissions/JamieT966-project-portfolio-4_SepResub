@@ -20,15 +20,16 @@ def BookingForm(request):
     form = DisplayBookingForm(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
+            name = form.cleaned_data['name']
             form.save()
 
             send_mail('Booking Confirmation', 
-            f'Hi {Booking.name} this is a test mail', 
+            f'Hi {name} this is a test mail', 
             'modernlandscapesgardens@gmail.com', 
             ['hepec91564@5k2u.com'],
             fail_silently=False)
-            # messages.success(request, 'Thanks for getting in touch. A member of the Modern Landscapes team will get back to you shortly.')
-            return render(request, 'booking.html', {'form':form})#PLACEHOLDER, NEED TO REPLACE WITH THANKS PAGE
+            
+            return render(request, 'booking.html', {'form':form})
 
     else:
         form = DisplayBookingForm(request.POST or None)
