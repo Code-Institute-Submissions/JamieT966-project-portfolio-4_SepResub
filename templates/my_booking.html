@@ -31,10 +31,34 @@
 
         <div class="btn-group" role="group" aria-label="Edit and delete buttons for bookings">
             <a class="text-decoration-none" href="{% url 'edit_booking' reference_match.id %}"><button type="button" class="btn btn-success">Edit</button></a>
-            <div class="p-2"></div>
-            <a class="text-decoration-none" href="{% url 'delete_booking' reference_match.id %}"><button type="button" class="btn btn-danger">Delete</button></a>
+            
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
+                Delete
+              </button>
         </div>
     </div>
 </div>
+
+
+<!-- Bootstrap modal for confirmation of delete  -->
+<div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Delete Booking Confirmation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete your booking? This can not be undone.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <a class="text-decoration-none" href="{% url 'delete_booking' reference_match.id %}"><button type="button" class="btn btn-danger">Delete</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endfor %}
 {% endblock %}

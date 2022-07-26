@@ -6,3 +6,8 @@ setTimeout(function () {
     let alert = new bootstrap.Alert(messages);
     alert.close();
 }, 4000);
+
+
+$('#delete-modal').on('shown.bs.modal', function () {
+    $('#reference_match').trigger('focus')
+  })
