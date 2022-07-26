@@ -32,7 +32,7 @@
         <div class="btn-group" role="group" aria-label="Edit and delete buttons for bookings">
             <a class="text-decoration-none" href="{% url 'edit_booking' reference_match.id %}"><button type="button" class="btn btn-success">Edit</button></a>
             <div class="p-2"></div>
-            <a class="text-decoration-none" href="{% url 'my_booking' %}"><button type="button" class="btn btn-danger">Delete</button></a>
+            <a class="text-decoration-none" href="{% url 'delete_booking' reference_match.id %}"><button type="button" class="btn btn-danger">Delete</button></a>
         </div>
     </div>
 </div>

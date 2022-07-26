@@ -48,3 +48,10 @@ def EditBooking(request, item_id):
     form = DisplayBookingForm(instance = item)
     context = {'form': form}
     return render(request,'edit_booking.html', context)
+
+
+def DeleteBooking(request, item_id):
+    item = get_object_or_404(Booking, id=item_id)
+    item.delete()
+    messages.success(request, 'Your booking has been deleted.')
+    return render(request,'index.html')
