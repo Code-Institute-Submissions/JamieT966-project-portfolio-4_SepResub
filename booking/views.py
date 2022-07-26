@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Booking
 from .forms import DisplayBookingForm
@@ -35,3 +35,16 @@ def MyBooking(request):
         # CURRENTLY BOOK_REF LINKED TO INPUT NOT BUTTON, HAVE TO FIND WAY TO GET THIS TO WORK BELOW
         # messages.error(request, 'This is not a recognised booking reference, please try again.')
         return render(request, 'my_booking.html')
+
+
+def EditBooking(request, item_id):
+    item = get_object_or_404(Booking, id=item_id)
+    if request.method == 'POST':
+        form = DisplayBookingForm(request.POST, instance=item)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your booking has been changed successfully.')
+            return render(request,'index.html')
+    form = DisplayBookingForm(instance = item)
+    context = {'form': form}
+    return render(request,'edit_booking.html', context)
