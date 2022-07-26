@@ -27,18 +27,12 @@ def BookingForm(request):
             booking_id = form.cleaned_data['booking_id']
             form.save()
 
-            send_mail('Booking Confirmation', 
-            f'Hi {name},
-            You have a booking with Modern Landscapes on {date_choice} at {time_choice} 
-            Your booking reference is {booking_id}. 
-            If you need to make a change to this booking or cancel it, please click this link: 
-            https://modern-landscapes.herokuapp.com/booking/booking_form/
-            Thanks,
-            Modern Landscapes', 
-            'modernlandscapesgardens@gmail.com', 
-            ['hepec91564@5k2u.com'],
-            fail_silently=False)
-            
+            send_mail(
+                'Booking Confirmation',
+                f'Hi {name}, you are booked in for a garden consultation on {date_choice} at {time_choice}',
+                'modernlandscapesgardens@gmail.com',
+                [f'{email}']
+            )
             return render(request, 'booking.html', {'form':form})
 
     else:
