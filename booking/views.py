@@ -29,7 +29,7 @@ def BookingForm(request):
 
             send_mail(
                 'Booking Confirmation',
-                f'Hi {name}, you are booked in for a garden consultation on {date_choice} at {time_choice}',
+                f'Hi {name}, you are booked in for a garden consultation on {date_choice} at {time_choice} with the booking reference: {booking_id}',
                 'modernlandscapesgardens@gmail.com',
                 [f'{email}']
             )
