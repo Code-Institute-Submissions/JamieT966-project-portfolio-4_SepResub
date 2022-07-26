@@ -21,10 +21,20 @@ def BookingForm(request):
     if request.method == 'POST':
         if form.is_valid():
             name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            date_choice = form.cleaned_data['date_choice']
+            time_choice = form.cleaned_data['time_choice']
+            booking_id = form.cleaned_data['booking_id']
             form.save()
 
             send_mail('Booking Confirmation', 
-            f'Hi {name} this is a test mail', 
+            f'Hi {name},
+            You have a booking with Modern Landscapes on {date_choice} at {time_choice} 
+            Your booking reference is {booking_id}. 
+            If you need to make a change to this booking or cancel it, please click this link: 
+            https://modern-landscapes.herokuapp.com/booking/booking_form/
+            Thanks,
+            Modern Landscapes', 
             'modernlandscapesgardens@gmail.com', 
             ['hepec91564@5k2u.com'],
             fail_silently=False)
