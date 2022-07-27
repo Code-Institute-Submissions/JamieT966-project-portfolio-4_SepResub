@@ -172,3 +172,23 @@ a {
     border: 1px solid var(--ml_darkgreen);
     border: 1px solid var(--ml_darkgreen);
 }
+
+.submit-btns {
+    background-color: var(--ml_darkgreen);
+}
+
+.submit-btns:hover {
+    background-color: var(--off_white);
+    color: var(--ml_darkgreen);
+}
+
+.edit-btns {
+    background-color: var(--ml_gold);
+    border: 1px solid var(--ml_darkgreen);
+}
+
+.edit-btns:hover {
+    background-color: var(--off_white);
+    border: 1px solid var(--ml_gold);
+    color: var(--ml_gold);
+}
