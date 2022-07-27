@@ -18,16 +18,15 @@ def BookingFormView(request):
 
 def BookingForm(request):
     form = DisplayBookingForm(request.POST or None)
-    booking_id = ''
     if request.method == 'POST':
         if form.is_valid():
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             date_choice = form.cleaned_data['date_choice']
             time_choice = form.cleaned_data['time_choice']
-            booking_id = form.cleaned_data['booking_id']
-            form.save()
-            booking_id = Booking.objects.get(booking_id)
+            
+            booking = form.save()
+            booking_id = booking.booking_id
 
             send_mail(
                 'Booking Confirmation',
