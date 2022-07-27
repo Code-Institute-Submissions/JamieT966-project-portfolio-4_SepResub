@@ -25,7 +25,7 @@ def BookingForm(request):
             date_choice = form.cleaned_data['date_choice']
             time_choice = form.cleaned_data['time_choice']
             form.save()
-            booking_id = form.cleaned_data['booking_id']
+            booking_id = Booking.booking_id
             send_mail(
                 'Booking Confirmation',
                 f'Hi {name}, you are booked in for a garden consultation on {date_choice} at {time_choice} with the booking reference: {booking_id}',
