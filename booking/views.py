@@ -25,14 +25,16 @@ def BookingForm(request):
             date_choice = form.cleaned_data['date_choice']
             time_choice = form.cleaned_data['time_choice']
             form.save()
-            booking_id = Booking().booking_id
-            send_mail(
-                'Booking Confirmation',
-                f'Hi {name}, you are booked in for a garden consultation on {date_choice} at {time_choice} with the booking reference: {booking_id}',
-                'modernlandscapesgardens@gmail.com',
-                [f'{email}']
-            )
-            return render(request, 'booking.html', {'form':form})
+            if 'book_ref' in request.GET:
+                book_ref = request.GET['book_ref']
+                booking_id = Booking.objects.filter(booking_id__icontains = book_ref)
+                send_mail(
+                    'Booking Confirmation',
+                    f'Hi {name}, you are booked in for a garden consultation on {date_choice} at {time_choice} with the booking reference: {booking_id}',
+                    'modernlandscapesgardens@gmail.com',
+                    [f'{email}']
+                )
+                return render(request, 'booking.html', {'form':form})
 
     else:
         form = DisplayBookingForm(request.POST or None)
