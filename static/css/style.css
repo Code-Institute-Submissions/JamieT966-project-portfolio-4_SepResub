@@ -1,3 +1,10 @@
+:root {
+    --off_white: #fafafa;
+    --ml_green: #67BE61;
+    --ml_darkgreen: #4A7347;
+    --ml_gold: #9E9951;
+}
+
 /* Styling to keep footer at bottom of page, taken from csstricks.com */
 html, body {
     height: 100%;
@@ -17,11 +24,6 @@ body {
   }
 
 /* Header nav and logo */
-header {
-    overflow: auto;
-    background-color: rgb(188, 188, 188);
-}
-
 .modern-logo {
     height: 60px;
 }
@@ -32,18 +34,22 @@ header {
 
 /* Intro/ hero section */
 .intro-section {
-    height: 30rem;
+    height: 35rem;
     text-align: center;
+    color: var(--off_white);
+    font-size: 1.2rem;
 }
 
 .hero-image {
-    /* background: url('https://res.cloudinary.com/du0modwwh/image/upload/v1657274458/hero4_uog6c0.jpg') no-repeat fixed 10% 100%; */
+    background: url('https://res.cloudinary.com/du0modwwh/image/upload/v1658946187/hero5_vledil.png') no-repeat fixed 5% 100%;
 }
 
 /* Our Work section */
 
 .our-work {
     height: 10rem;
+    background-color: var(--ml_gold);
+    color: var(--off_white);
 }
 
 /* Value section  */
@@ -58,12 +64,9 @@ header {
 
 /* Testimonials section */
 
-.test-box {
-    height: 80px;
-    width: 80px;
-    background-color: aqua;
+.tesimonal-image {
+    height: 100px;
     border-radius: 50%;
-    margin: 0 auto;
 }
 
 /* Footer */
@@ -102,7 +105,7 @@ a {
 /* My booking page  */
 
 .my-booking-body {
-    background-color: #346434;
+    background-color: var(--ml_green);
     color: #fafafa;
     padding: 20px 10px;
     border-radius: 10px;
@@ -127,4 +130,16 @@ a {
 .gallery-container img:hover {
     opacity: .7;
     transition: 0.8s;
+}
+
+/* Button styling */
+
+.main-btn {
+    background-color: var(--ml_green);
+    border: var(--ml_greenn);
+}
+
+.our-work-btn {
+    padding: 20px;
+    border-radius: 10px;
 }
