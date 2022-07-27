@@ -1,12 +1,3 @@
-//   Date Picker
-<script language="javascript">
-    $(document).ready(function () {
-        $("#date_picker").datepicker({
-            minDate: 0
-        });
-    });
-</script>
-
 // Function to make alerts disappear automatically
 setTimeout(function () {
     let messages = document.getElementById('msg');

@@ -26,7 +26,7 @@ def BookingForm(request):
             time_choice = form.cleaned_data['time_choice']  
             booking = form.save()
             booking_id = booking.booking_id
-            
+            # LOOK INTO MAKING EMAIL NICER FORMAT
             # send_mail(
             #     'Booking Confirmation',
             #     f'Hi {name}, you are booked in for a garden consultation on {date_choice} at {time_choice} with the booking reference: {booking_id}',
@@ -41,14 +41,14 @@ def BookingForm(request):
 
 
 def MyBooking(request):
+    reference_match = None
     if 'book_ref' in request.GET:
         book_ref = request.GET['book_ref']
         reference_match = Booking.objects.filter(booking_id__icontains = book_ref)
-        return render(request, 'my_booking.html', {'reference_match':reference_match})
-    else:
-        # CURRENTLY BOOK_REF LINKED TO INPUT NOT BUTTON, HAVE TO FIND WAY TO GET THIS TO WORK BELOW
-        # messages.error(request, 'This is not a recognised booking reference, please try again.')
-        return render(request, 'my_booking.html')
+        if not reference_match:
+            messages.error(request, 'This is not a recognised booking reference, please try again.')
+            return render(request, 'my_booking.html')
+    return render(request, 'my_booking.html', {'reference_match':reference_match})
 
 
 def EditBooking(request, item_id):
