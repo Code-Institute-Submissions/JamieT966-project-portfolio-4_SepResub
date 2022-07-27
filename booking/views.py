@@ -27,12 +27,12 @@ def BookingForm(request):
             booking = form.save()
             booking_id = booking.booking_id
             
-            send_mail(
-                'Booking Confirmation',
-                f'Hi {name}, you are booked in for a garden consultation on {date_choice} at {time_choice} with the booking reference: {booking_id}',
-                'modernlandscapesgardens@gmail.com',
-                [f'{email}']
-            )
+            # send_mail(
+            #     'Booking Confirmation',
+            #     f'Hi {name}, you are booked in for a garden consultation on {date_choice} at {time_choice} with the booking reference: {booking_id}',
+            #     'modernlandscapesgardens@gmail.com',
+            #     [f'{email}']
+            # )
             return render(request, 'booking.html', {'form':form})
 
     else:

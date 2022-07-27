@@ -5,7 +5,6 @@ from phonenumber_field.modelfields import PhoneNumberField
 from django.core.validators import MinValueValidator, ValidationError
 from django.urls import reverse
 
-
 TIME_CHOICES = (
     ('9:00', '9:00'),
     ('10:00', '10:00'),

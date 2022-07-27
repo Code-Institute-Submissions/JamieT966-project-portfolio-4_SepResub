@@ -1,6 +1,8 @@
 from django import forms
 from .models import Booking
 from django.forms import ModelForm
+from datetime import date
+from django.core.exceptions import ValidationError
 
 class DateInput(forms.DateInput):
     """
@@ -18,5 +20,11 @@ class DisplayBookingForm(forms.ModelForm):
             'email': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter your email address'}),
             'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter your phone number'}),
             'date_choice': DateInput(attrs={'class': 'form-control'}),
-            'time_choice': forms.Select(attrs={'class': 'form-control',}),
+            'time_choice': forms.Select(attrs={'class': 'form-control '}),
         }
+
+    def clean_date_choice(self, *args, **kwargs):
+        date_choice = self.cleaned_data.get('date_choice')
+        if date_choice <= date.today():
+            self.add_error("date_choice", "The selected date is today's date or a past date.")
+        return date_choice

@@ -1,4 +1,11 @@
-console.log('hello')
+//   Date Picker
+<script language="javascript">
+    $(document).ready(function () {
+        $("#date_picker").datepicker({
+            minDate: 0
+        });
+    });
+</script>
 
 // Function to make alerts disappear automatically
 setTimeout(function () {
@@ -11,3 +18,5 @@ setTimeout(function () {
 $('#delete-modal').on('shown.bs.modal', function () {
     $('#reference_match').trigger('focus')
   })
+
+
