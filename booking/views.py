@@ -39,6 +39,7 @@ def BookingForm(request):
             time_choice = form.cleaned_data['time_choice']
             booking = form.save()
             booking_id = booking.booking_id
+            date_choice = booking.date_choice
             send_mail(
                 'Booking Confirmation',
                 f'Hi {name}, you are booked in for a garden consultation on'
@@ -49,7 +50,7 @@ def BookingForm(request):
                 'modernlandscapesgardens@gmail.com',
                 [f'{email}']
             )
-    return render(request, 'booking_form.html', {'form': form})
+    return render(request, 'index.html', {'form': form})
 
 
 def MyBooking(request):
