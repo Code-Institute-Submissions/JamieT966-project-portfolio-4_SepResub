@@ -42,9 +42,9 @@ def BookingForm(request):
             date_choice = booking.date_choice
             send_mail(
                 'Booking Confirmation',
-                f'Hi {name}, you are booked in for a garden consultation on'
-                f'{date_choice} at {time_choice}'
-                f'with the booking reference: {booking_id}.'
+                f'Hi {name}, you are booked in for a garden consultation on '
+                f'{date_choice} at {time_choice} '
+                f'with the booking reference: {booking_id}. '
                 'You can make changes to your booking here:'
                 'https://modern-landscapes.herokuapp.com/booking/',
                 'modernlandscapesgardens@gmail.com',
