@@ -4,8 +4,9 @@ from .models import Booking
 from .forms import DisplayBookingForm
 from django.contrib import messages
 from django.core.exceptions import ValidationError
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMessage
 from django.conf import settings
+from django.template.loader import render_to_string
 
 
 def BookingPageView(request):
@@ -33,6 +34,14 @@ def BookingForm(request):
             #     'modernlandscapesgardens@gmail.com',
             #     [f'{email}']
             # )
+            template = render_to_string('templates/email_template.html',{name:name})
+            mail = EmailMessage(
+                'Booking Confirmation',
+                template,
+                'modernlandscapesgardens@gmail.com',
+                [f'{email}']
+            )
+            mail.send()
             return render(request, 'booking.html', {'form':form})
 
     else:
