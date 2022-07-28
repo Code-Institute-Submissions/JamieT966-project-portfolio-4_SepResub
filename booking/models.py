@@ -41,4 +41,9 @@ class Booking(models.Model):
         """
         Creates a string of text that is shown in the bookings section of admin.
         """
-        return self.name + ' , ' + str(self.date_choice) + ' , ' + str(self.time_choice) + ' , ' + self.booking_id
+        return ', '.join([
+            self.name,
+            str(self.date_choice),
+            str(self.time_choice),
+            self.booking_id,
+        ])
