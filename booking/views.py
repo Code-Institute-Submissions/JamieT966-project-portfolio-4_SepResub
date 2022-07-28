@@ -34,7 +34,7 @@ def BookingForm(request):
             #     'modernlandscapesgardens@gmail.com',
             #     [f'{email}']
             # )
-            template = render_to_string('email_template.html',{name: form.cleaned_data['name']})
+            template = render_to_string('email_template.html',{name: booking.name})
             mail = EmailMessage(
                 'Booking Confirmation',
                 template,
