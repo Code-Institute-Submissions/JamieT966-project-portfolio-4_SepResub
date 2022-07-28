@@ -27,21 +27,21 @@ def BookingForm(request):
             time_choice = form.cleaned_data['time_choice']  
             booking = form.save()
             booking_id = booking.booking_id
-            # LOOK INTO MAKING EMAIL NICER FORMAT
-            # send_mail(
-            #     'Booking Confirmation',
-            #     f'Hi {name}, you are booked in for a garden consultation on {date_choice} at {time_choice} with the booking reference: {booking_id}',
-            #     'modernlandscapesgardens@gmail.com',
-            #     [f'{email}']
-            # )
-            template = render_to_string('email_template.html',{name: booking.name})
-            mail = EmailMessage(
+            
+            send_mail(
                 'Booking Confirmation',
-                template,
+                f'Hi {name}, you are booked in for a garden consultation on {date_choice} at {time_choice} with the booking reference: {booking_id}',
                 'modernlandscapesgardens@gmail.com',
                 [f'{email}']
             )
-            mail.send()
+            # template = render_to_string('email_template.html',{name: booking.name})
+            # mail = EmailMessage(
+            #     'Booking Confirmation',
+            #     template,
+            #     'modernlandscapesgardens@gmail.com',
+            #     [f'{email}']
+            # )
+            # mail.send()
             return render(request, 'booking.html', {'form':form})
 
     else:
