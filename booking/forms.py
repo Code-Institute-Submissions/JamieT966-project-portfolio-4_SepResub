@@ -4,11 +4,13 @@ from django.forms import ModelForm
 from datetime import date
 from django.core.exceptions import ValidationError
 
+
 class DateInput(forms.DateInput):
     """
     Method for displaying date picker found on Stack Overflow by user: "avi".
     """
     input_type = 'date'
+
 
 class DisplayBookingForm(forms.ModelForm):
     """
@@ -22,9 +24,18 @@ class DisplayBookingForm(forms.ModelForm):
         fields = ('name', 'email', 'phone', 'date_choice', 'time_choice',)
 
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter your name', 'name':'name'}),
-            'email': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter your email address'}),
-            'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter your phone number'}),
+            'name': forms.TextInput(
+                attrs={'class': 'form-control',
+                                'placeholder': 'Please enter your name',
+                                'name': 'name'}),
+            'email': forms.TextInput(
+                attrs={'class': 'form-control',
+                                'placeholder':
+                                    'Please enter your email address'}),
+            'phone': forms.TextInput(
+                attrs={'class': 'form-control',
+                                'placeholder':
+                                    'Please enter your phone number'}),
             'date_choice': DateInput(attrs={'class': 'form-control'}),
             'time_choice': forms.Select(attrs={'class': 'form-control '}),
         }
@@ -35,5 +46,7 @@ class DisplayBookingForm(forms.ModelForm):
         """
         date_choice = self.cleaned_data.get('date_choice')
         if date_choice <= date.today():
-            self.add_error("date_choice", "The selected date is today's date or a past date.")
+            self.add_error(
+                "date_choice",
+                "The selected date is today's date or a past date.")
         return date_choice
