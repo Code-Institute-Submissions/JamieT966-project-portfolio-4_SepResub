@@ -4,6 +4,10 @@ from .models import ContactForm
 from django.contrib import messages
 
 def contact_page_view(request):
+    """
+    Function displays and handles contact form.
+    Sends success alert and redirects user after conact message has been filled out.
+    """
     if request.method == "POST":
         contact_method = ContactForm()
         name = request.POST.get('name')

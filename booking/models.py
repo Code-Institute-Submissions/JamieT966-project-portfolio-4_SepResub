@@ -18,6 +18,9 @@ TIME_CHOICES = (
 )
 
 class Booking(models.Model):
+    """
+    Booking model for forms.py. Includes booking id that is not found in forms.py.
+    """
     name = models.CharField(max_length=100, blank=False)
     email = models.EmailField()
     phone = PhoneNumberField()
@@ -26,10 +29,16 @@ class Booking(models.Model):
     booking_id = models.CharField(max_length=32, null=False, editable=False)
 
     def save(self, *args, **kwargs):
+        """
+        Generates a booking unique booking id everytime the booking form is completed.
+        """
         if not self.booking_id:
             self.booking_id = str(uuid.uuid4().hex)
         super().save(*args, **kwargs)
 
 
     def __str__(self):
+        """
+        Creates a string of text that is shown in the bookings section of admin.
+        """
         return self.name + ' , ' + str(self.date_choice) + ' , ' + str(self.time_choice) + ' , ' + self.booking_id

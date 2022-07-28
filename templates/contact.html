@@ -3,13 +3,14 @@
 {% block content %}
 
 {% include 'messages.html' %}
-
+<!-- Page title -->
 <div class="container">
     <div class="col-12 text-center pt-4">
         <h4>Contact Us</h4>
     </div>
 </div>
 
+<!-- Main contact form -->
 <form method="POST" class="col-6 contact-form">
     {% csrf_token %}
     <div class="form-group">

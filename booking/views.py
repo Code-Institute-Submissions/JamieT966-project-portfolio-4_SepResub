@@ -10,14 +10,24 @@ from django.template.loader import render_to_string
 
 
 def BookingPageView(request):
+    """
+    Renders booking page.
+    """
     return render(request, 'booking.html')
 
 def BookingFormView(request):
+    """
+    Renders booking form.
+    """
     form_info = Booking.objects.all()
-    form_class = DisplayBookingForm()
     return render(request, 'booking_form.html', {'form_info': form_info})
 
 def BookingForm(request):
+    """
+    Checks if form is valid then posts to back end.
+    Sends email confirmation to user.
+    Will display error if any field is invalid.
+    """
     form = DisplayBookingForm(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
@@ -50,6 +60,10 @@ def BookingForm(request):
 
 
 def MyBooking(request):
+    """
+    After receiving booking reference in email user can enter booking id on this page.
+    Sends an error alert if incorrect booking reference is entered.
+    """
     reference_match = None
     if 'book_ref' in request.GET:
         book_ref = request.GET['book_ref']
@@ -61,6 +75,9 @@ def MyBooking(request):
 
 
 def EditBooking(request, item_id):
+    """
+    Function that allows user to edit booking after correctly entering booking reference.
+    """
     item = get_object_or_404(Booking, id=item_id)
     if request.method == 'POST':
         form = DisplayBookingForm(request.POST, instance=item)
@@ -74,6 +91,9 @@ def EditBooking(request, item_id):
 
 
 def DeleteBooking(request, item_id):
+    """
+    Function that allows user to delete booking after correctly entering booking reference.
+    """
     item = get_object_or_404(Booking, id=item_id)
     item.delete()
     messages.success(request, 'Your booking has been deleted.')

@@ -6,12 +6,18 @@ from django.core.exceptions import ValidationError
 
 class DateInput(forms.DateInput):
     """
-    Method for displaying date picker found on Stack Overflow by user: "avi"
+    Method for displaying date picker found on Stack Overflow by user: "avi".
     """
     input_type = 'date'
 
 class DisplayBookingForm(forms.ModelForm):
+    """
+    Main booking form.
+    """
     class Meta:
+        """
+        Class to define booking form fields and widgets.
+        """
         model = Booking
         fields = ('name', 'email', 'phone', 'date_choice', 'time_choice',)
 
@@ -24,6 +30,9 @@ class DisplayBookingForm(forms.ModelForm):
         }
 
     def clean_date_choice(self, *args, **kwargs):
+        """
+        Validates that selected date is not today or a past date.
+        """
         date_choice = self.cleaned_data.get('date_choice')
         if date_choice <= date.today():
             self.add_error("date_choice", "The selected date is today's date or a past date.")
