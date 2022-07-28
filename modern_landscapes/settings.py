@@ -89,6 +89,7 @@ WSGI_APPLICATION = 'modern_landscapes.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# TO TEST I COMMENTED OUT POSTGRES AND UNCOMMENTED SQL DATABASE
 
 # DATABASES = {
 #     'default': {
