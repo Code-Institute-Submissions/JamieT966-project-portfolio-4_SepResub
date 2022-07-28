@@ -3,10 +3,12 @@ from django.http import HttpResponse
 from .models import ContactForm
 from django.contrib import messages
 
+
 def contact_page_view(request):
     """
     Function displays and handles contact form.
-    Sends success alert and redirects user after conact message has been filled out.
+    Sends success alert and redirects user after
+    contact message has been filled out.
     """
     if request.method == "POST":
         contact_method = ContactForm()
@@ -19,5 +21,9 @@ def contact_page_view(request):
         contact_method.phone = phone
         contact_method.message = message
         contact_method.save()
-        messages.success(request, 'Thanks for getting in touch, ' + name + '. A member of the Modern Landscapes team will get back to you shortly.')
+        messages.success(
+            request, 'Thanks for getting in touch, ' +
+            name +
+            '. A member of the Modern Landscapes team'
+            'will get back to you shortly.')
     return render(request, 'contact.html')
