@@ -40,22 +40,14 @@ def BookingForm(request):
             
             send_mail(
                 'Booking Confirmation',
-                f'Hi {name}, you are booked in for a garden consultation on {date_choice} at {time_choice} with the booking reference: {booking_id}',
+                f'Hi {name}, you are booked in for a garden consultation on' 
+                '{date_choice} at {time_choice}'
+                'with the booking reference: {booking_id}.'
+                'You can make changes to your booking here:'
+                'https://modern-landscapes.herokuapp.com/booking/',
                 'modernlandscapesgardens@gmail.com',
                 [f'{email}']
             )
-            # template = render_to_string('email_template.html',{name: booking.name})
-            # mail = EmailMessage(
-            #     'Booking Confirmation',
-            #     template,
-            #     'modernlandscapesgardens@gmail.com',
-            #     [f'{email}']
-            # )
-            # mail.send()
-            return render(request, 'booking.html', {'form':form})
-
-    else:
-        form = DisplayBookingForm(request.POST or None)
     return render(request, 'booking_form.html', {'form':form})
 
 
