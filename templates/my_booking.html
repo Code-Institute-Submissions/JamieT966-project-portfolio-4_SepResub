@@ -25,7 +25,7 @@
 {% for reference_match in reference_match %}
 
 <div class="container-fluid text-center pt-4 my-booking-box">
-    <div class="col-4 mx-auto my-booking-body">
+    <div class="col-md-4 cold-sm-4 col-xl-2 mx-auto my-booking-body">
         <div class="">
             <p>{{ reference_match.name }}</p>
             <p>{{ reference_match.email }}</p>
@@ -34,9 +34,9 @@
         </div>
 
         <div class="btn-group" role="group" aria-label="Edit and delete buttons for bookings">
-            <a class="text-decoration-none" href="{% url 'edit_booking' reference_match.id %}"><button type="button" class="btn submit-btns">Edit</button></a>
+            <a class="text-decoration-none" href="{% url 'edit_booking' reference_match.id %}"><button type="button" class="btn edit-btns">Edit</button></a>
             
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
+            <button type="button" class="btn cancel-btns" data-toggle="modal" data-target="#delete-modal">
                 Cancel
               </button>
         </div>
@@ -59,7 +59,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <a class="text-decoration-none" href="{% url 'delete_booking' reference_match.id %}"><button type="button" class="btn btn-danger">Cancel</button></a>
+          <a class="text-decoration-none" href="{% url 'delete_booking' reference_match.id %}"><button type="button" class="btn btn-danger">Confirm</button></a>
         </div>
       </div>
     </div>

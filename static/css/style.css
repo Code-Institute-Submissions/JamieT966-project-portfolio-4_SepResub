@@ -118,10 +118,15 @@ a {
 /* My booking page  */
 
 .my-booking-body {
-    background-color: var(--ml_green);
+    background-color: var(--ml_darkgreen);
     color: var(--off_white);
     padding: 20px 10px;
     border-radius: 10px;
+    overflow: auto;
+}
+
+.my-booking-body p {
+    font-weight: 500;
 }
 
 /* Gallery Page */
@@ -207,4 +212,15 @@ a {
     background-color: var(--off_white);
     border: 1px solid var(--ml_gold);
     color: var(--ml_gold);
+}
+
+.cancel-btns {
+    background-color: rgb(220, 44, 44);
+    color: var(--off_white);
+}
+
+.cancel-btns:hover {
+    background-color: var(--off_white);
+    color: rgb(220, 44, 44);
+    border: 1px solid rgb(220, 44, 44);
 }
