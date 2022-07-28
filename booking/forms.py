@@ -48,5 +48,5 @@ class DisplayBookingForm(forms.ModelForm):
         if date_choice <= date.today():
             self.add_error(
                 "date_choice",
-                "The selected date is today's date or a past date.")
+                "You have selected either today's date or a past date.")
         return date_choice
