@@ -152,6 +152,7 @@ a {
     padding: 15px;
     border-radius: 10px;
     border: 2px solid var(--off_white);
+    color: var(--off_white);
 }
 
 .main-btn:hover {
@@ -177,16 +178,18 @@ a {
 .nav-btn {
     background-color: var(--ml_darkgreen);
     border: 1px solid var(--ml_gold);
+    color: var(--off_white);
 }
 
 .nav-btn:hover {
     background-color: var(--ml_gold);
     border: 1px solid var(--ml_darkgreen);
-    border: 1px solid var(--ml_darkgreen);
+    color: var(--off_white);
 }
 
 .submit-btns {
     background-color: var(--ml_darkgreen);
+    color: var(--off_white);
 }
 
 .submit-btns:hover {
@@ -197,6 +200,7 @@ a {
 .edit-btns {
     background-color: var(--ml_gold);
     border: 1px solid var(--ml_darkgreen);
+    color: var(--off_white);
 }
 
 .edit-btns:hover {

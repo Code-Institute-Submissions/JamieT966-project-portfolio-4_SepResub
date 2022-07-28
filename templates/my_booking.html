@@ -15,7 +15,7 @@
         <label for="exampleInputEmail1">Enter Booking Reference</label>
         <input name="book_ref" type="text" class="form-control" placeholder="Booking Reference" aria-describedby="enter booking reference here" required>
     </div>
-    <button type="submit" class="btn btn-success submit-btns">Submit</button>
+    <button type="submit" class="btn submit-btns">Submit</button>
 </form>
 
 {% for reference_match in reference_match %}
@@ -30,7 +30,7 @@
         </div>
 
         <div class="btn-group" role="group" aria-label="Edit and delete buttons for bookings">
-            <a class="text-decoration-none" href="{% url 'edit_booking' reference_match.id %}"><button type="button" class="btn btn-success">Edit</button></a>
+            <a class="text-decoration-none" href="{% url 'edit_booking' reference_match.id %}"><button type="button" class="btn submit-btns">Edit</button></a>
             
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
                 Delete
