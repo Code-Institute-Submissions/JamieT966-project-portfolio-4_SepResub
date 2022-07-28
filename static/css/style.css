@@ -57,6 +57,12 @@ h3 {
     color: var(--off_white);
 }
 
+@media only screen and (max-width: 430px) {
+    .our-work {
+      height: 200px;
+    }
+  }
+
 /* Value section  */
 
 .benefits-image {
@@ -68,6 +74,11 @@ h3 {
 .tesimonal-image {
     height: 100px;
     border-radius: 50%;
+}
+
+.fa {
+    color: var(--ml_darkgreen);
+
 }
 
 /* Footer */
@@ -154,6 +165,7 @@ a {
     border-radius: 10px;
     background-color: var(--ml_gold);
     border: 2px solid var(--off_white);
+    color: var(--off_white);
 }
 
 .our-work-cta-btn:hover {
