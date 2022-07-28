@@ -40,17 +40,21 @@ def BookingForm(request):
             booking = form.save()
             booking_id = booking.booking_id
             date_choice = booking.date_choice
-            send_mail(
-                'Booking Confirmation',
-                f'Hi {name}, you are booked in for a garden consultation on'
-                f'{date_choice} at {time_choice}'
-                f'with the booking reference: {booking_id}.'
-                'You can make changes to your booking here:'
-                'https://modern-landscapes.herokuapp.com/booking/',
-                'modernlandscapesgardens@gmail.com',
-                [f'{email}']
-            )
-    return render(request, 'index.html', {'form': form})
+            # send_mail(
+            #     'Booking Confirmation',
+            #     f'Hi {name}, you are booked in for a garden consultation on'
+            #     f'{date_choice} at {time_choice}'
+            #     f'with the booking reference: {booking_id}.'
+            #     'You can make changes to your booking here:'
+            #     'https://modern-landscapes.herokuapp.com/booking/',
+            #     'modernlandscapesgardens@gmail.com',
+            #     [f'{email}']
+            # )
+            return render(request, 'booking.html', {'form': form})
+
+    else:
+        form = DisplayBookingForm(request.POST or None)
+    return render(request, 'booking_form.html', {'form': form})
 
 
 def MyBooking(request):
