@@ -35,7 +35,10 @@ h3 {
 .book-btn {
     margin: 20px auto;
 }
-
+/* Logged in screen */
+.logged-in {
+    color: var(--ml_gold);
+}
 /* Intro/ hero section */
 .intro-section {
     height: 35rem;
