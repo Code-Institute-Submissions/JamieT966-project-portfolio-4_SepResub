@@ -38,6 +38,7 @@ h3 {
 /* Logged in screen */
 .logged-in {
     color: var(--ml_gold);
+    background-color: var(--ml_darkgreen);
 }
 /* Intro/ hero section */
 .intro-section {
