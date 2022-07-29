@@ -10,7 +10,7 @@
 
 <!-- Form pre-loaded with booking details to edit -->
 <div class="container-fluid d-flex justify-content-center booking_form">
-    <div class="col-8 text-start pt-4 form-group "> 
+    <div class="col-8 text-start pt-4 form-group ">
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}

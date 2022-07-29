@@ -6,22 +6,23 @@
 }
 
 /* Styling to keep footer at bottom of page, taken from csstricks.com */
-html, body {
+html,
+body {
     height: 100%;
-  }
+}
 
 body {
     display: flex;
     flex-direction: column;
-  }
+}
 
 .content {
     flex: 1 0 auto;
-  }
+}
 
 .footer {
     flex-shrink: 0;
-  }
+}
 
 h3 {
     text-decoration: underline;
@@ -35,11 +36,13 @@ h3 {
 .book-btn {
     margin: 20px auto;
 }
+
 /* Logged in screen */
 .logged-in {
     color: var(--ml_gold);
     background-color: var(--ml_darkgreen);
 }
+
 /* Intro/ hero section */
 .intro-section {
     height: 35rem;
@@ -63,9 +66,9 @@ h3 {
 
 @media only screen and (max-width: 430px) {
     .our-work {
-      height: 200px;
+        height: 200px;
     }
-  }
+}
 
 /* Value section  */
 
@@ -89,6 +92,7 @@ h3 {
 a {
     color: rgb(0, 0, 0);
 }
+
 .site-links {
     padding-top: 1rem;
     font-size: .8rem;
@@ -144,11 +148,13 @@ a {
     background-color: var(--off_white);
     margin-bottom: 50px;
 }
+
 .gallery-container img {
     width: 400px;
     height: 300px;
     object-fit: cover;
 }
+
 .gallery-container img:hover {
     opacity: .7;
     transition: 0.8s;

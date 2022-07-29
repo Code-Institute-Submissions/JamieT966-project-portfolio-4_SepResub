@@ -107,7 +107,7 @@ class FormsTest(TestCase):
             name="John",
             email="john@gmail.com",
             phone="+353861204773",
-            date_choice="2020-10-10",
+            date_choice="200-10-10",
             time_choice="10:00")
         data = {
             'name': dummy_content.name,

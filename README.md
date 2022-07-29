@@ -1,108 +1,370 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align="center">Modern Landscapes</h1>
 
-Welcome JamieT966,
+[View the live project here](https://modern-landscapes.herokuapp.com/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Modern Landscapes is a gardening and landscaping company that have been operating in the greater Dublin area for over 25 years. For that length of time they have never had a website, relying solely on word-of-mouth marketing to generate business. 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+The new Modern Landscapes website allows users to contact Modern Landscapes directly, make bookings as well as changing or deleting those bookings with the booking reference provided via email.
 
-## Gitpod Reminders
+The admin users can view and manage bookings as well as contact forms filled out.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+***Add in picture from am I responsive.
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+## Index – Table of Contents
+* [User Experience (UX)](#user-experience-ux) 
+* [Features](#features)
+* [Design](#design)
+* [Planning](#planning)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [Technologies Used](#technologies-used)
+* [Credits](#credits)
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## User Experience (UX)
 
-A blue button should appear to click: _Make Public_,
+### User stories :
 
-Another blue button should appear to click: _Open Browser_.
+- As a **user** I can **click on a link** so that **it brings me to a new page, such as the calendar booking page **
+- As a **user** I can **fill out the contact form** so that **I can communicate with Modern Landscapes**
+- As a **user** I can **select a date on the calendar** so that **I can make a booking**
+- As a **user** I can **get a booking ID** so that **make changes to my booking or delete my booking**
+- As a **user** I can **edit my booking** so that **I can select a more suitable time and/or day**
+- As a **user** I can **delete an existing booking** so that **I do not waste my time or Modern Landscapes' time**
+- As a **user** I can **update an existing booking** so that **I can change a booking**
+- As a **user** I can **view a booking calendar** so that **I can have an overview of dates that are available**
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- As an **admin** I can **view messages sent via the admin panel** so that **I can view messages sent and communicate with users**
+- As an **admin** I can **view bookings** so that **I can prepare a work schedule**#
+- As an **admin** I can **delete** so that **change a person's booking**
+- As an **admin** I can **delete** so that **customers are not dissapointed**
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Features
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Existing Features
 
-------
+- Navigation Bar
 
-## Release History
+The navigation bar features on every page of the website, giving a consistent feel to the website. The navigation bar features the logo to the left. It also features three links and a button, for home, our work, contact with the button being book now.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+When on a smaller screen the navigation links become a 'burger' style icon, when clicked it will show all links with the "book now" button becoming a link.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+![Navbar](media/nav-bar.png)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- Home Page/ Hero Image
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+The home screen features a background image of a large bush and the owner of Modern Landscapes. Accompanying that is a text layover with a Title, subtext and a clear call to action with a book now button below. 
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+![Home Page/ Hero Image](media/home-page.png)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- Our Work Banner
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+The following section features a small amount of text to the left and a large gold button to the right contains a link to the our work/ gallery page.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+![Our Work Banner](media/our-work-cta.png)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- Benefits Section
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+This section of the Modern Landscapes website features three of the key benefits you get when working with Modern Landscapes. The first benefit stated is experience, as Modern Landscapes have been operating for 25 years+, that is a great benefit. Second is outlining their terrific customer service and finally, the quality of work they provide and materials they source.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+![Benefits Section](media/benefits.png)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
+- Testimonials Section
 
-## FAQ about the uptime script
+The next section contains testimonials from three select customers of Modern Landscapes, Joe, Mary and John. This section features a quote on the left and then a circular image of each person. This layout alternates as the user goes down the website. When viewed on mobile devices the images will be hidden.
 
-**Why have you added this script?**
+![Testimonials Section](media/testimonials.png)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
+- Book Now CTA 
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+The bottom of the home page features another section very similar to the our work banner, this is once again a call to action to entice the user to book a garden consultation. Like the our work banner the text is to the left and the button is to the right. When viewed on mobile devices the text and button will appear above one another.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+![Book Now CTA](media/book-no-cta.png)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
 
-**So….?**
+- Footer
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+The footer is the last feature of the home page. This contains site links to the left, social links in the middle and the logo to the right. When viewed on a mobile the site links are hidden and the social links stack on top of the logo.
 
-**Can I opt out?**
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+![Footer](media/footer.png)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
 
-**Anything more?**
+- Our Work Page
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+The Our Work page features a gallery of past completed jobs
 
----
+![Our Work Page](media/our-work-gallery.png)
 
-Happy coding!
+
+- Contact Page
+
+The Contact page features a full contact form that displays a form. To fill this out the user will need to provide their name, email address, phone number and message. All feature checks for errors and empty fields. The user is then redirected to the contact page with an alert message saying "Thanks for getting in touch, ' + name + '. A member of the Modern Landscapes team will get back to you shortly."
+
+![Contact Page](media/contact-page.png)
+
+
+- Booking Home
+
+This page is the main page for booking. This page features two buttons, the first to edit an existing booking and the second to make a new booking. 
+
+![Booking Page](media/edit-new-booking.png)
+
+
+- Booking Form
+
+This is the main booking form. The user is required to provide their name, email address, phone number. They then have to select a date that suits them and a time. All fields are validated for errors and blanks. Upon clicking submit if the form is valid the user will receive an email confirmation.
+
+![Booking Form](media/book-now.png)
+
+
+- Email
+
+Here we have the email that a user will receive if they fill out the form correctly. The email greets them by their name. It then lists the date and time they have selected. The email will also contain the booking reference associated with their booking. This booking reference can be used to edit or cancel their booking.
+
+![Email](media/email.png)
+
+
+- Edit Booking Page
+
+From the email the user will have the booking reference, this can be entered in edit booking page. If a reference is not found an error will be thrown, if it is the booking will appear with an edit and delete button.
+
+![Booking Search](media/search-booking.png)
+
+![Edit Booking](media/edit-booking.png)
+
+
+- Delete Booking
+
+The final feature is the delete booking feature. If cancel is clicked on the found booking a modal will pop up asking the user for confirmation of their intention to delete.
+
+![Delete Booking](media/delete-booking.png)
+
+
+### Future Features to be Implemented
+
+- Improve Email
+
+In future I would like to display a nicer formatted HTML email message.
+
+- Admin Block Dates
+
+A future element that I would like implemented would be for an admin to be able to block out days/ times. This unfortunately fell out of the scope of this project.
+
+- Combination of Date Selector and Time Selector
+
+Another feature I would like to see implemented is the combination of the date and time field to provide a cleaner user experience.
+
+- Article Page for Our Work
+
+I believe that instead of a gallery page, a page where admin and worker accounts would be able to post articles containing not just the finished work but the start and progress pictures would serve Modern Landscapes better. This however fell out of the scope.
+
+
+## Planning
+
+### Strategy
+
+The client's goal was to generate leads through the booking of garden consultations through the website. To achieve this goal I made the decision to not have user accounts just admin accounts. The user will receive an email with a booking reference that they can use to edit or delete their booking. This is due to the fact that users would be put off having to sign up for a website they were likely only going to use once. With two accounts for admin and workers. Workers can not delete or edit a booking or contact form.
+
+Users would also have an easy way to contact Modern Landscapes with the contact form.
+
+
+### Scope
+Myself and the client discussed the scope at length. I gave Modern Lanscapes an idea of what was possible within the timeframe of this project. A home page, gallery, contact and booking page that upon completion would email a booking reference to the user to make changes or cancel their booking. 
+
+An article page fell out of this scope.
+
+### Structure
+
+This project contained four applications.
+- Home - Contains home page.
+- Work - Contains our work/ gallery.
+- Contact - Provides a contact form page for users to submit their queries.
+- Booking - Provides a booking form that takes the user's name, email address, phone number, chosen date and chosen time. A booking id is then generated that can be used to edit and delete.
+
+**Model Diagrams**
+
+Firstly, the booking model consists of a booking_id as the primary key, then five other fields consisting of name as a CharField, email as an EmailField, phone as a custom PhoneNumberField, date_choice as a DateField and time_choice as a CharField.
+
+Next is the contact model. This consists of name as CharField, email as an EmailField, phone as a CharField and message as a TextField.
+
+![Model Diagrams](media/model-diagram.png)
+
+### Skeleton
+
+I have included wireframes of the home page, contact page and booking page. I chose to leave out the our work/ gallery page as that was very straight forward.
+
+![Home Page Wireframe](media/home-wireframe.png)
+
+![Booking Page Wireframe](media/booking-wireframe.png)
+
+![Contact Page Wireframe](media/contact-wireframe.png)
+
+### Surface
+
+**Colours**
+
+The colour scheme used in this project reflect the logo and main benefits section, I have also incorporated a gold/yellow colour as Modern Landscapes previously had clothing made with a similar colour.
+
+![Colour Scheme](media/colours.png)
+
+**Typography**
+
+For typography I decided to stick with the Bootstrap fonts as I liked them.
+
+**Imagery**
+
+I used some stock imagery for the our work/ gallery page. I did the same for the headshots in the testimonials section. The three benefits images have been created by Lauren Tarpey. The hero image is an picture that I took.
+
+
+## Testing
+
+ ### Valdator Testing
+
+ W3 HTML Validator checks have been performed on the below page, finding no issues.
+ - Home Page
+ - Our Work Page
+ - Contact Page
+ - Booking Page
+ - Booking Home Page
+ - Booking Edit Page
+ - Booking Form Page
+ - Base.html
+
+ W3 CSS Validator found no errors.
+
+ PEP8 Validatior testing found no issues on the below files.
+- Home - views.py
+- Home - urls.py
+- Our Work - view.py 
+- Our Work - urls.py 
+- Contact - models.py
+- Contact - views.py
+- Contact - admin.py
+- Contact - urls.py
+- Booking - forms.py
+- Booking - models.py
+- Booking - views.py
+- Booking - admin.py
+- Booking - urls.py
+- Booking - test_views.py
+- Booking - test_models.py
+- Booking - test_fields.py
+
+I am unable to use Google's lighthouse to test my website, as it is currently not working and if I get it to work I will not be making any more pushes for fear of it breaking, again.
+
+### Issues and Bugs
+
+I have faced major issues deploying to Heroku. Initially, only my Django Admin was rendering unstyled so I contacted Tutor support. I deleted the entire contents of my Cloudinary twice and it made no difference. The tutor could not resolve the issue so I had to wait for the next day.
+
+The following day, all my static files were now not rendering. Including my website. After hours of no resolution I asked would creating a new Cloudinary account, I did that and it worked! For the first two pushes... then back to how it was at the beginning of the day.
+
+Worse yet, my static files aren't loading in my local Gitpod environment. There is a lot more testing and minor tweaks that I would have liked to have made but I plan to create a new Cloudinary account and if that works I will have to leave that to be graded on.
+
+### Automated Testing
+
+I conducted 20 tests, listed below using Django TestCase.
+
+- Tested if a valid booking form would process.
+- Tested if name was left out of booking would that raise an error.
+- Tested if email address was incorrect would the booking form raise an error.
+- Tested if phone number was incorrect would the booking form raise an error.
+- Tested if today's date or a past date would the booking form raise an error.
+- Tested if a time was selected that was not in the time select would the booking form raise an error.
+- Tested if a mistyped date was input would the booking form raise an error.
+- Tested if valid name was entered would test pass.
+- Tested if valid email was entered would test pass.
+- Tested if valid phone was entered would test pass.
+- Tested if valid date choice was entered would test pass.
+- Tested if valid time choice was entered would test pass.
+- Tested if home page would render.
+- Tested if booking page would render.
+- Tested if booking form would render.
+- Tested if booking edit page would render.
+- Tested if contact page would render.
+- Tested if our work/ gallery page would render.
+- Tested if blank name would raise error message.
+- Tested if incorrect email would raise error message.
+- Tested if incorrect phone number would raise error message.
+- Tested if email would send locally.
+
+## Manual Testing
+
+The following buttons and links were tested under the requirements that they can be clicked, redirect user to correct page and a hover effect is working.
+
+![Manual Button Testing](media/testing-buttons.png)
+
+![Manual Link Testing](media/testing-links.png)
+
+## Responsive Testing
+
+The website is responsive on all screen types. The content that had to be changed to be responsive were:
+
+- Navigation Bar - When screen becomes smaller it was necessary to create a 'burger' button so that links go into this drop down menu and the "Book Now" button becomes a link.
+- Our Work & Book Now Banners - These banners contained text and a button displaying alongside each other. This had to be changed to display one on top of each other, extra padding was necessary then for the buttons.
+- Benefits Section - The benefits section on small screens is forced to appear as a column now.
+- Testimonials - At a smaller screen size I have hidden the images, just leaving the text content.
+- Footer - At a certain breakpoint, the site links are hidden. At a further breakpoint, the social links display above the logo.
+- Booking Page - On smaller screens the edit button and new booking button display vertically.
+
+
+## Deployment
+
+For deployment I created a Github repository using the Code Institute template then opened in Gitpod.
+
+Following that I followed the Code Institute Django Cheat Sheet [CI Cheat Sheet](https://docs.google.com/document/d/1P5CWvS5cYalkQOLeQiijpSViDPogtKM7ZGyqK-yehhQ/edit)
+
+For my final deployment I have been plagued with countless issues as discussed earlier, isssues with collecting static being at the forefront of my issues. When trying to force Gitpod via the terminal to collectstatic I am getting an 'etag' error. There is very little about this error online, I have had two tutors attempt to resolve this error but they have not been able to. I have ran out of tutoring minutes with the majority of the time having been taken up by this issue and it is still not fixed.
+
+I had fixed it for about a half hour but then after two pushes it has gone back to normal. I plan to create a new Cloudinary account and use that but best case I will not be able to push again, so fingers crossed.
+
+
+## Technologies Used
+
+The languages used in this project are:
+- HTML
+- CSS
+- Javascript
+- Python
+
+I used several frameworks, libraries and programs to create this website:
+- Django
+- Bootstrap v4.6
+- Heroku Postgres
+- SQLite
+- Github
+- Gitpod
+- Heroku
+- Cloudinary
+- PhoneNumberField
+- Moqups
+- Balsamiq
+- Photoshop
+- PEP8 Online
+- W3C Mark Up Validation
+- W3C CSS Validaton
+- Beautify
+
+
+## Credits
+
+### Resources
+- Code Institute - Hello Django, I think therefore I blog, Python testing, Logout page.
+- Stackoverflow - helped with testing, and having a datepicker on my booking form in particular.
+- Codemy - Youtube channel helped a lot.
+- Realpython.com - Helped with my understanding of auto testing.
+- Bootstrap - helped with modal template and general troubleshooting.
+- W3Schools - helped me with a lot of basic stuff I forgot.
+- Youtube - I have watched countless Youtube videos to try and explain how to do what I was doing.
+
+## Acknowledgments
+
+- Credit to Lauren Tarpey for creating the images and logo used in this project.
+- Thanks to my mentor, Brian Macharia, for his help during this project. His feedback has been very helpful.
