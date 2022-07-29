@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'booking',
     'contact',
+    'home',
+    'work'
 ]
 
 MESSAGE_TAGS = {
