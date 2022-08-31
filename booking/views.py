@@ -50,6 +50,8 @@ def BookingForm(request):
                 'modernlandscapesgardens@gmail.com',
                 [f'{email}']
             )
+            messages.success(
+                request, 'Your booking has been created.')
             return render(request, 'booking.html', {'form': form})
 
     else:
