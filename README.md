@@ -8,8 +8,6 @@ The new Modern Landscapes website allows users to contact Modern Landscapes dire
 
 The admin users can view and manage bookings as well as contact forms filled out.
 
-***Add in picture from am I responsive.
-
 
 ## Index – Table of Contents
 * [User Experience (UX)](#user-experience-ux) 
