@@ -52,7 +52,7 @@ def BookingForm(request):
             )
             messages.success(
                 request, 'Your booking has been created.')
-            return render(request, 'booking_form.html', {'form': form})
+            return render(request, 'booking.html', {'form': form})
 
     else:
         form = DisplayBookingForm(request.POST or None)
