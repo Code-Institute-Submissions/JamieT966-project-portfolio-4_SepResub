@@ -65,4 +65,25 @@
     </div>
 </div>
 {% endfor %}
+
+{% if user.is_authenticated %}
+<div class="container">
+    <div class="col-12 text-center pt-4">
+        <h5>{{ user }}'s Bookings</h5>
+    </div>
+</div>
+
+{% for booking in bookings %}
+<div class="container-fluid text-center pt-4 my-booking-box">
+    <div class="col-md-4 cold-sm-4 col-xl-2 mx-auto my-booking-body">
+        <div class="">
+            <p>{{ booking.name }}</p>
+            <p>{{ booking.email }}</p>
+            <p>{{ booking.date_choice }}</p>
+            <p>{{ booking.time_choice }}</p>
+        </div>
+
+{% endfor %}
+{% endif %}
+
 {% endblock %}
