@@ -22,7 +22,7 @@
 </form>
 
 <!-- If booking reference is found, display will render with edit and delete options -->
-{% for reference_match in reference_match %}
+{% for reference_match in reference_matches %}
 
 <div class="container-fluid text-center pt-4 my-booking-box">
     <div class="col-md-4 cold-sm-4 col-xl-2 mx-auto my-booking-body">
@@ -82,8 +82,9 @@
             <p>{{ booking.date_choice }}</p>
             <p>{{ booking.time_choice }}</p>
         </div>
+        
         <div class="btn-group" role="group" aria-label="Edit and delete buttons for bookings">
-            <a class="text-decoration-none" href="{% url 'edit_booking' reference_match.id %}"><button type="button" class="btn edit-btns">Edit</button></a>
+            <a class="text-decoration-none" href="{% url 'edit_booking' booking.id %}"><button type="button" class="btn edit-btns">Edit</button></a>
 
             <button type="button" class="btn cancel-btns" data-toggle="modal" data-target="#delete-modal">
                 Cancel
@@ -94,5 +95,26 @@
 
 {% endfor %}
 {% endif %}
+
+<!-- Bootstrap modal for confirmation of delete  -->
+<div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cancel Booking Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to cancel your booking? This can not be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <a class="text-decoration-none" href="{% url 'delete_booking' booking.id %}"><button type="button" class="btn btn-danger">Confirm</button></a>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
