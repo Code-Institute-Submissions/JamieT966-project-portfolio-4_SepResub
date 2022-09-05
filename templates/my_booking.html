@@ -82,6 +82,15 @@
             <p>{{ booking.date_choice }}</p>
             <p>{{ booking.time_choice }}</p>
         </div>
+        <div class="btn-group" role="group" aria-label="Edit and delete buttons for bookings">
+            <a class="text-decoration-none" href="{% url 'edit_booking' reference_match.id %}"><button type="button" class="btn edit-btns">Edit</button></a>
+
+            <button type="button" class="btn cancel-btns" data-toggle="modal" data-target="#delete-modal">
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>
 
 {% endfor %}
 {% endif %}
