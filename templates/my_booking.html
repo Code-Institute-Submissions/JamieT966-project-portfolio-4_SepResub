@@ -66,6 +66,7 @@
 </div>
 {% endfor %}
 
+<!-- If user is logged in, any email that matches that in database, will show bookings for that -->
 {% if user.is_authenticated %}
 <div class="container">
     <div class="col-12 text-center pt-4">
@@ -93,10 +94,7 @@
     </div>
 </div>
 
-{% endfor %}
-{% endif %}
-
-<!-- Bootstrap modal for confirmation of delete  -->
+<!-- Bootstrap modal for confirmation of delete when user is logged in -->
 <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -116,5 +114,8 @@
         </div>
     </div>
 </div>
+
+{% endfor %}
+{% endif %}
 
 {% endblock %}
