@@ -233,5 +233,6 @@ a {
 }
 /* Signup and Login links */
 .sign a {
-    border: 1px solid var(--ml_gold);
+    color: var(--ml_gold);
+    font-weight: bolder;
 }
