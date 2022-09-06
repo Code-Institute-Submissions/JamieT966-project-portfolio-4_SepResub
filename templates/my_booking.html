@@ -1,10 +1,10 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 <!-- Error message to display if incorrect booking reference is entered -->{% include 'messages.html' %}
-<!-- Page title -->{% if user.is_authenticated %}
+<!-- Page title -->
 <div class="container">
 	<div class="col-12 text-center pt-4">
 		<h4>My Booking</h4> </div>
-</div>
+</div> {% if user.is_authenticated %}
 <!-- If user is logged in, any email that matches that in database, will show bookings for that -->{% for booking in bookings %}
 <div class="container-fluid text-center pt-4 my-booking-box">
 	<div class="col-md-4 cold-sm-4 col-xl-2 mx-auto my-booking-body">
