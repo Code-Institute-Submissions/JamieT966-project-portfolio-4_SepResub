@@ -231,3 +231,7 @@ a {
     color: rgb(220, 44, 44);
     border: 1px solid rgb(220, 44, 44);
 }
+/* Signup and Login links */
+.sign a {
+    border: 1px solid var(--ml_gold);
+}
