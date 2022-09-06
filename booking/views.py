@@ -56,6 +56,8 @@ def BookingForm(request):
 
     else:
         form = DisplayBookingForm(request.POST or None)
+        messages.error(
+                request, 'Your booking has not been created.')
     return render(request, 'booking_form.html', {'form': form})
 
 
