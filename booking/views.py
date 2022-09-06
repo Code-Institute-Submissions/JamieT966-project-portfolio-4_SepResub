@@ -65,7 +65,9 @@ def MyBooking(request):
     user can enter booking id on this page.
     Sends an error alert if incorrect booking reference is entered.
     """
-    bookings = Booking.objects.filter(email=request.user.email)
+    if request.user.is_authenticated:
+        bookings = Booking.objects.filter(email=request.user.email)
+        return render(request, 'my_booking.html',{'bookings': bookings})
     reference_matches = None
     if 'book_ref' in request.GET:
         book_ref = request.GET['book_ref']
@@ -76,10 +78,9 @@ def MyBooking(request):
                 request,
                 'This is not a recognised booking'
                 ' reference, please try again.')
-            return render(request, 'my_booking.html',{'bookings': bookings})
+            return render(request, 'my_booking.html')
     return render(
-        request, 'my_booking.html', {'reference_matches': reference_matches,
-                                     'bookings': bookings})
+        request, 'my_booking.html', {'reference_matches': reference_matches})
 
 
 def EditBooking(request, item_id):
