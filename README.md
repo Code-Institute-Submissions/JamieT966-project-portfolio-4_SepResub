@@ -315,13 +315,148 @@ The website is responsive on all screen types. The content that had to be change
 
 ## Deployment
 
-For deployment I created a Github repository using the Code Institute template then opened in Gitpod.
+### Set up Github Repo and Gitpod Workspace
 
-Following that I followed the Code Institute Django Cheat Sheet [CI Cheat Sheet](https://docs.google.com/document/d/1P5CWvS5cYalkQOLeQiijpSViDPogtKM7ZGyqK-yehhQ/edit)
+1. Create a repository in Github – using the Code Institute Gitpod Full template.
 
-For my final deployment I have been plagued with countless issues as discussed earlier, isssues with collecting static being at the forefront of my issues. When trying to force Gitpod via the terminal to collectstatic I am getting an 'etag' error. There is very little about this error online, I have had two tutors attempt to resolve this error but they have not been able to. I have ran out of tutoring minutes with the majority of the time having been taken up by this issue and it is still not fixed.
+2.	Click on the green Gitpod button to load the repository workspace in Gitpod.
 
-I had fixed it for about a half hour but then after two pushes it has gone back to normal. I plan to create a new Cloudinary account and use that but best case I will not be able to push again, so fingers crossed.
+
+### Install Django and Supporting Libraries
+
+1.	Install Django and Gunicorn Heroku
+``` pip3 install Django==3.2 gunicorn ```
+
+2.	Install PostgreSQL.
+``` pip3 install dj_database_url psycopg2 ```
+
+3. -	Install library for Cloudinary.
+``` : pip3 install dj3-cloudinary-storage ```
+
+4. Create the requirements.txt file.
+``` pip3 freeze --local > requirements.txt ```
+
+
+### Create a project directory and project applications
+
+1. Create a project directory 
+``` django-admin startproject project_name  ```
+(This creates a root directory for the project with a settings.py, manage.py, urls.py, etc.
+
+2.	Create project apps.
+``` python3 manage.py startapp application_name  ```
+
+3. Add the app to the settings.py file of the root directory.
+Add to the bottom of 'INSTALLED_APPS', e.g "booking".
+
+
+### Migrate changes to the database
+
+1. Plan migrations first.
+``` python3 manage.py migrate -–plan   ```
+
+2. Run migrations.
+``` python3 manage.py migrate  ```
+
+3. Plan make migrations.
+``` python3 manage.py makemigrations --dry-run ```
+
+4. Run migrations.
+``` python3 manage.py makemigrations ```
+
+5. Test if working
+Run a local server.
+``` python3 manage.py runserver ```
+Open up the browser, it should open up a screen that displays that the “install worked successfully”
+
+
+### Connect the Gitpod Terminal to Heroku
+
+1. Open up Heroku login command from the gitpod terminal - type in the following into the gitpod terminal:
+``` heroku login –i ```
+
+2.	Login in With Your Heroku Email and Password
+Create an app on heroku for the EU region – type the following into the gitpod terminal:
+
+``` Heroku create app_name –region=eu ```
+
+
+### Connect a Postgres Database to the Heroku App
+
+1. Open app in Heroku
+2. Click on the ‘Resources’ tab
+- In the ‘add-ons’ box search for ‘Heroku Postgres’ and select it.
+- A pop-up box will appear to confirm the installation of heroku postgres in your app – select ‘submit order form’. Heroku Postgres will now appear in the ‘add-ons’ list.
+3.	Click on the ‘Settings’ tab
+- Scroll to ‘Config Vars’ then click on ‘Reveal Config Vars’ to retrieve our database URL
+- Next to the config var called ‘DATABASE_URL’ copy the postgres URL in order to add into our project in gitpod as per steps below.
+
+
+### Create and Set Up an env.py File
+
+1. Create a file called 'env.py' in your top level directory.
+2. Open the env file amd type this code:
+``` import os
+
+os.environ["DATABASE_URL"] = "Paste in Heroku DATABASE_URL Link"
+os.environ["SECRET_KEY"] = "Make up your own randomSecretKey" ```
+
+
+### Update Config Vars in Heroku App With Secret Key
+
+1. In your Heroku app, go to Settings.
+2. Click reveal config vars.
+3. Type SECRET_KEY in keys section, amd paste your secret key from Gitpod.
+4. Click add and youre done.
+
+
+### Update Root App With Secret Key
+
+1. Open settings.py, find from pathlib import Path.
+2. Paste code below:
+``` import os
+import dj_database_url if os.path.isfile("env.py"):
+import env ```
+3. Update secret_key in settings.py to:
+
+``` os.environ.get('SECRET_KEY') ```
+
+
+### Connect the App to the Postgres Database
+
+1. Open settings.py, find from DATABASES.
+2. Highlight all of the section and comment it out.
+3. Add a new ‘DATABASES’ section – as below:
+
+``` DATABASES = {
+'default': dj_database_url.parse(os.environ.get(‘DATABASE_URL’))
+} ```
+
+4. To test if working go to Heroku - Resources - Heroku Postgres, you should see zero rows and tables.
+5. Type ``` python3 manage.py migrate ``` then refresh Heroku, you should see the database has populated.
+6. Uncomment the previously commented database line of code and comment out the live database. 
+
+
+###	Set up a Cloudinary Account and Link it to the Project
+
+1. Create Cloudinary account
+2. Navigate to API Envionment Variable.
+3. In Gitpod, go to the env.py file and enter:
+
+``` os.environ["CLOUDINARY_URL"] = "cloudinary://************************" ```
+
+4. Copy the Cloudinary URL and add it to Heroku as a config var with the key name CLOUDINARY_URL.
+5. Also add config vars, DISABLE_COLLECTSTATIC with a value of 1 and PORT with a value of 8000.
+
+
+###	Add Cloudinary Libraries to the Project
+
+1. Go to the settings.py in Gitpod.
+2. In the ‘INSTALLED_APPS’ section install ‘cloudinary_storage’ and ‘cloudinary’ below and above ‘django.contrib.staticfiles’ 
+
+
+### 
+
 
 
 ## Technologies Used
