@@ -395,9 +395,7 @@ Create an app on heroku for the EU region – type the following into the gitpod
 ### Create and Set Up an env.py File
 
 1. Create a file called 'env.py' in your top level directory.
-2. Open the env file amd type this code:
-``` import os
-
+2. Open the env file amd type this code: ``` import os
 os.environ["DATABASE_URL"] = "Paste in Heroku DATABASE_URL Link"
 os.environ["SECRET_KEY"] = "Make up your own randomSecretKey" ```
 
@@ -413,22 +411,17 @@ os.environ["SECRET_KEY"] = "Make up your own randomSecretKey" ```
 ### Update Root App With Secret Key
 
 1. Open settings.py, find from pathlib import Path.
-2. Paste code below:
-``` import os
+2. Paste code below: ``` import os
 import dj_database_url if os.path.isfile("env.py"):
 import env ```
-3. Update secret_key in settings.py to:
-
-``` os.environ.get('SECRET_KEY') ```
+3. Update secret_key in settings.py to: ``` os.environ.get('SECRET_KEY') ```
 
 
 ### Connect the App to the Postgres Database
 
 1. Open settings.py, find from DATABASES.
 2. Highlight all of the section and comment it out.
-3. Add a new ‘DATABASES’ section – as below:
-
-``` DATABASES = {
+3. Add a new ‘DATABASES’ section – as below: ``` DATABASES = {
 'default': dj_database_url.parse(os.environ.get(‘DATABASE_URL’))
 } ```
 
@@ -455,7 +448,67 @@ import env ```
 2. In the ‘INSTALLED_APPS’ section install ‘cloudinary_storage’ and ‘cloudinary’ below and above ‘django.contrib.staticfiles’ 
 
 
-### 
+### Instruct Django to use Cloudinary for static file storage
+
+1. Go to setttings.py, find "STATIC_URL=’/static" and add this code below: ``` STATICFILES_STORAGE =
+'cloudinary_storage.storage.StaticHashedCloudinaryStorage' STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage' ```
+
+
+###	Instruct Django on Where Templates Will be Stored
+
+1. Go to setttings.py, find "BASE_DIR" and add this code below:
+``` TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates') ```
+2. Find "TEMPLATES" and change "DIRS" to "TEMPLATES_DIR"
+
+
+### Set up Allowed Hosts
+
+1. Go to setttings.py, find "ALLOWED_HOST" and add this code below:
+``` ALLOWED_HOSTS = [‘project_name.herokuapp.com’, ‘localhost’] ```
+
+
+### Create Static, Media and Templates Folders
+
+1. In Gitpod, add folders static, media and templates to the top level.
+
+
+### Create a Procfile
+
+1. Again, in the top level directory create a file called "Procfile"
+2. Open this file and add: ``` web: gunicorn project_name.wsgi ```
+
+
+### Push Code to Github
+
+1. git add .
+2. git commit -m "meaningful message"
+3. git push
+
+
+### Deploying to Heroku
+
+1. Follow previous instructions for pushing code to Github.
+2. Go to the the Heroku app, find the "Deploy" tab.
+3. Select "Heroku CLI"
+4. Type ``` heroku login -i ```
+5. Then tyoe ``` git push heroku main ```
+
+
+### Final Deployment 
+
+1. Open settings.py, set Debug to False.
+2. Below Debug = False add this code: ``` X_FRAME_OPTIONS = ‘SAMEORIGIN’ ```
+3. Uncomment production database and comment out the develpment database.
+4. Follow previous instructions for pushing code to Github.
+5. Note: DISABLE_COLLECTSTATIC has not been removed from my config vars as I am getting an etag error anytime I try to deploy with disable_collect static removed and the build fails. This is an issue that 2 tutors could not resolve.
+6. Type ``` heroku login -i ```
+7. Then tyoe ``` git push heroku main ```
+8. Check app in Heroku to make sure all is working.
+
+
 
 
 
