@@ -83,12 +83,12 @@ def MyBooking(request):
         request, 'my_booking.html', {'reference_matches': reference_matches})
 
 
-def EditBooking(request, item_id):
+def EditBooking(request, reference_id):
     """
     Function that allows user to edit booking after
     correctly entering booking reference.
     """
-    item = get_object_or_404(Booking, id=item_id)
+    item = get_object_or_404(Booking, reference_id=reference_id)
     if request.method == 'POST':
         form = DisplayBookingForm(request.POST, instance=item)
         if form.is_valid():
