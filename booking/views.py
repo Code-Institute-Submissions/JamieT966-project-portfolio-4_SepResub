@@ -64,6 +64,7 @@ def MyBooking(request):
     After receiving booking reference in email
     user can enter booking id on this page.
     Sends an error alert if incorrect booking reference is entered.
+    If user is logged in they are able to see all bookings linked to their email.
     """
     if request.user.is_authenticated:
         bookings = Booking.objects.filter(email=request.user.email)
@@ -110,3 +111,9 @@ def DeleteBooking(request, item_id):
     item.delete()
     messages.success(request, 'Your booking has been deleted.')
     return render(request, 'index.html')
+
+
+def AllBookings(request):
+    if request.userself.request.user.is_staff:
+        all_bookings = Booking.objects.all()
+        return render(request, 'booking.html',{'all_bookings': all_bookings})
