@@ -114,6 +114,5 @@ def DeleteBooking(request, item_id):
 
 
 def AllBookings(request):
-    if request.userself.request.user.is_staff:
-        all_bookings = Booking.objects.all()
-        return render(request, 'booking.html',{'all_bookings': all_bookings})
+    all_bookings = Booking.objects.all()
+    return render(request, 'booking.html',{'all_bookings': all_bookings})
