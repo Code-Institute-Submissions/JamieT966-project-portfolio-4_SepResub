@@ -1,21 +1,18 @@
-{% extends "base.html" %}
-{% load static %}
-{% block content %}
-
-{% include 'messages.html' %}
-
+{% extends "base.html" %} {% load static %} {% block content %} {% include 'messages.html' %}
 <!-- Two buttons, one to edit existing booking and one to make a new booking -->
 <div class="container-fluid pt-5">
-    <div class="row align-items-center justify-content-center text-center">
-        <div class="col-md-4 col-12 m-4">
-            <h5>Edit an Existing Booking</h5>
-            <a class="text-decoration-none" href="{% url 'my_booking' %}"><button type="button" class="btn book-btn d-flex justify-content-center edit-btns">Edit Booking</button></a>
-        </div>
-        <div class="col-md-4 col-12 booking-btn-box m-4">
-            <h5>Make a New Booking</h5>
-            <a class="text-decoration-none" href="{% url 'booking' %}"><button type="button" class="btn book-btn d-flex justify-content-center submit-btns">Book Now</button></a>
-        </div>
+  <div class="row align-items-center justify-content-center text-center">
+    <div class="col-md-4 col-12 m-4">
+      <h5>Edit an Existing Booking</h5>
+      <a class="text-decoration-none" href="{% url 'my_booking' %}">
+        <button type="button" class="btn book-btn d-flex justify-content-center edit-btns">Edit Booking</button>
+      </a>
     </div>
-</div>
-
-{% endblock %}
+    <div class="col-md-4 col-12 booking-btn-box m-4">
+      <h5>Make a New Booking</h5>
+      <a class="text-decoration-none" href="{% url 'booking' %}">
+        <button type="button" class="btn book-btn d-flex justify-content-center submit-btns">Book Now</button>
+      </a>
+    </div>
+  </div>
+</div> {% endblock %}

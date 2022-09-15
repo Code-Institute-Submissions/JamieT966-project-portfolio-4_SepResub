@@ -2,91 +2,91 @@
 <!-- Error message to display if incorrect booking reference is entered -->{% include 'messages.html' %}
 <!-- Page title -->
 <div class="container">
-    <div class="col-12 text-center pt-4">
-        <h4>My Booking</h4>
-    </div>
+  <div class="col-12 text-center pt-4">
+    <h4>My Booking</h4>
+  </div>
 </div> {% if user.is_authenticated %}
-<!-- If user is logged in, any email that matches that in database, will show bookings for that -->{% for booking in bookings %}
-<div class="container-fluid text-center pt-4 my-booking-box">
-    <div class="col-md-4 cold-sm-4 col-xl-2 mx-auto my-booking-body">
-        <div class="">
-            <p>{{ booking.name }}</p>
-            <p>{{ booking.email }}</p>
-            <p>{{ booking.date_choice }}</p>
-            <p>{{ booking.time_choice }}</p>
-        </div>
-        <div class="btn-group" role="group" aria-label="Edit and delete buttons for bookings">
-            <a class="text-decoration-none" href="{% url 'edit_booking' booking.id %}">
-                <button type="button" class="btn edit-btns">Edit</button>
-            </a>
-            <button type="button" class="btn cancel-btns" data-toggle="modal" data-target="#delete-modal"> Cancel </button>
-        </div>
+<!-- If user is logged in, any email that matches that in database, will show bookings for that -->{% for booking in bookings %} <div class="container-fluid text-center pt-4 my-booking-box">
+  <div class="col-md-4 cold-sm-4 col-xl-2 mx-auto my-booking-body">
+    <div class="">
+      <p>{{ booking.name }}</p>
+      <p>{{ booking.email }}</p>
+      <p>{{ booking.date_choice }}</p>
+      <p>{{ booking.time_choice }}</p>
     </div>
+    <div class="btn-group" role="group" aria-label="Edit and delete buttons for bookings">
+      <a class="text-decoration-none" href="{% url 'edit_booking' booking.id %}">
+        <button type="button" class="btn edit-btns">Edit</button>
+      </a>
+      <button type="button" class="btn cancel-btns" data-toggle="modal" data-target="#delete-modal"> Cancel </button>
+    </div>
+  </div>
 </div>
 <!-- Bootstrap modal for confirmation of delete when user is logged in -->
 <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Cancel Booking Confirmation</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-            </div>
-            <div class="modal-body"> Are you sure you want to cancel your booking? This can not be undone. </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a class="text-decoration-none" href="{% url 'delete_booking' booking.id %}">
-                    <button type="button" class="btn btn-danger">Confirm</button>
-                </a>
-            </div>
-        </div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cancel Booking Confirmation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"> Are you sure you want to cancel your booking? This can not be undone. </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a class="text-decoration-none" href="{% url 'delete_booking' booking.id %}">
+          <button type="button" class="btn btn-danger">Confirm</button>
+        </a>
+      </div>
     </div>
-</div> {% empty %}
-<div class="container">
-    <div class="col-12 text-center pt-4">
-        <p>Sorry, there are no bookings under this email address.</p>
-        <p>If you have a booking reference, please log out and enter booking reference on this page.</p>
-    </div>
+  </div>
+</div> {% empty %} <div class="container">
+  <div class="col-12 text-center pt-4">
+    <p>Sorry, there are no bookings under this email address.</p>
+    <p>If you have a booking reference, please log out and enter booking reference on this page.</p>
+  </div>
 </div> {% endfor %} {% else %}
 <!-- Booking reference field for editing or deleting -->
-<form class="col-6 contact-form pt-5"> {% csrf_token %}
-    <div class="form-group">
-        <label for="exampleInputEmail1">Enter Booking Reference</label>
-        <input name="book_ref" type="text" class="form-control" placeholder="Booking Reference" aria-describedby="enter booking reference here" required>
-    </div>
-    <button type="submit" class="btn submit-btns">Submit</button>
+<form class="col-6 contact-form pt-5"> {% csrf_token %} <div class="form-group">
+    <label for="exampleInputEmail1">Enter Booking Reference</label>
+    <input name="book_ref" type="text" class="form-control" placeholder="Booking Reference" aria-describedby="enter booking reference here" required>
+  </div>
+  <button type="submit" class="btn submit-btns">Submit</button>
 </form>
-<!-- If booking reference is found, display will render with edit and delete options -->{% for reference_match in reference_matches %}
-<div class="container-fluid text-center pt-4 my-booking-box">
-    <div class="col-md-4 cold-sm-4 col-xl-2 mx-auto my-booking-body">
-        <div class="">
-            <p>{{ reference_match.name }}</p>
-            <p>{{ reference_match.email }}</p>
-            <p>{{ reference_match.date_choice }}</p>
-            <p>{{ reference_match.time_choice }}</p>
-        </div>
-        <div class="btn-group" role="group" aria-label="Edit and delete buttons for bookings">
-            <a class="text-decoration-none" href="{% url 'edit_booking' reference_match.id %}">
-                <button type="button" class="btn edit-btns">Edit</button>
-            </a>
-            <button type="button" class="btn cancel-btns" data-toggle="modal" data-target="#delete-modal"> Cancel </button>
-        </div>
+<!-- If booking reference is found, display will render with edit and delete options -->{% for reference_match in reference_matches %} <div class="container-fluid text-center pt-4 my-booking-box">
+  <div class="col-md-4 cold-sm-4 col-xl-2 mx-auto my-booking-body">
+    <div class="">
+      <p>{{ reference_match.name }}</p>
+      <p>{{ reference_match.email }}</p>
+      <p>{{ reference_match.date_choice }}</p>
+      <p>{{ reference_match.time_choice }}</p>
     </div>
+    <div class="btn-group" role="group" aria-label="Edit and delete buttons for bookings">
+      <a class="text-decoration-none" href="{% url 'edit_booking' reference_match.id %}">
+        <button type="button" class="btn edit-btns">Edit</button>
+      </a>
+      <button type="button" class="btn cancel-btns" data-toggle="modal" data-target="#delete-modal"> Cancel </button>
+    </div>
+  </div>
 </div>
 <!-- Bootstrap modal for confirmation of delete  -->
 <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Cancel Booking Confirmation</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-            </div>
-            <div class="modal-body"> Are you sure you want to cancel your booking? This can not be undone. </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a class="text-decoration-none" href="{% url 'delete_booking' reference_match.id %}">
-                    <button type="button" class="btn btn-danger">Confirm</button>
-                </a>
-            </div>
-        </div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cancel Booking Confirmation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"> Are you sure you want to cancel your booking? This can not be undone. </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a class="text-decoration-none" href="{% url 'delete_booking' reference_match.id %}">
+          <button type="button" class="btn btn-danger">Confirm</button>
+        </a>
+      </div>
     </div>
+  </div>
 </div> {% endfor %} {% endif %} {% endblock %}

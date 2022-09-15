@@ -1,103 +1,100 @@
-{% extends "base.html" %}
-{% load static %}
-{% block content %}
-
-{% include 'messages.html' %}
-
+{% extends "base.html" %} {% load static %} {% block content %} {% include 'messages.html' %}
 <!-- Intro/ Hero section -->
 <div class="jumbotron-fluid">
-    <div class="hero-image intro-section p-3 container-fluid d-flex justify-content-center align-items-center">
-        <div>
-            <h1>Modern Landscapes</h1>
-            <h4>Making your garden better.</h4>
-            <p>Book your FREE garden consultation today.</p>
-            <a class="nav-link" href="{% url 'booking_home' %}">
-                <button type="button" class="btn book-btn d-flex justify-content-center main-btn">Book Now</button>
-            </a>
-        </div>
+  <div class="hero-image intro-section p-3 container-fluid d-flex justify-content-center align-items-center">
+    <div>
+      <h1>Modern Landscapes</h1>
+      <h4>Making your garden better.</h4>
+      <p>Book your FREE garden consultation today.</p>
+      <a class="nav-link" href="{% url 'booking_home' %}">
+        <button type="button" class="btn book-btn d-flex justify-content-center main-btn">Book Now</button>
+      </a>
     </div>
+  </div>
 </div>
-
 <!-- Featured article section/ Our Work -->
 <div class="container-fluid d-flex justify-content-center py-4 our-work">
-    <div class="row align-items-center text-start">
-        <div class="col-12 col-sm-8">See previous work completed by Modern Landscapes by ckicking on our work using the button to the right.</div>
-        <div class="col-12 col-sm-4">
-            <a class="text-decoration-none" href="{% url 'work' %}"><button type="button" class="btn book-btn d-flex justify-content-center our-work-cta-btn">Our Work</button></a>
-        </div>
+  <div class="row align-items-center text-start">
+    <div class="col-12 col-sm-8">See previous work completed by Modern Landscapes by ckicking on our work using the button to the right.</div>
+    <div class="col-12 col-sm-4">
+      <a class="text-decoration-none" href="{% url 'work' %}">
+        <button type="button" class="btn book-btn d-flex justify-content-center our-work-cta-btn">Our Work</button>
+      </a>
     </div>
+  </div>
 </div>
-
 <!-- Value provided section -->
 <div class="container-fluid">
-    <div class="row align-items-center justify-content-center text-center">
-        <div class="col-12 py-5">
-            <h3>Why you should choose Modern Landscapes</h3>
-        </div>
-        <div class="col-md-4 col-12">
-            <img class="benefits-image" src="https://res.cloudinary.com/du0modwwh/image/upload/v1659046664/25_sln2pa.png" alt="25 years in business">
-            <h5 class="py-3">25 Years Experience</h5>
-            <p>Modern Landscapes has been around for 25 years, which will have you safe in the knowledge that we've seen it all.</p>
-        </div>
-        <div class="col-md-4 col-12">
-            <img class="benefits-image" src="https://res.cloudinary.com/du0modwwh/image/upload/v1659046664/Customer_Service_w5mwv7.png" alt="Excellent customer service">
-            <h5 class="py-3">Excellent Customer Service</h5>
-            <p>At Modern Landscapes we are known for our superb customer service as can be seen by our testimonials from Joe, Mary and John.</p>
-        </div>
-        <div class="col-md-4 col-12">
-            <img class="benefits-image" src="https://res.cloudinary.com/du0modwwh/image/upload/v1659046664/Quality_ucs1ur.png" alt="Quality service guaranteed">
-            <h5 class="py-3">Quality Guaranteed</h5>
-            <p>Modern Landscapes strive for the very best in quality of work, which can be seen on the our work page.</p>
-        </div>
+  <div class="row align-items-center justify-content-center text-center">
+    <div class="col-12 py-5">
+      <h3>Why you should choose Modern Landscapes</h3>
     </div>
+    <div class="col-md-4 col-12">
+      <img class="benefits-image" src="https://res.cloudinary.com/du0modwwh/image/upload/v1659046664/25_sln2pa.png" alt="25 years in business">
+      <h5 class="py-3">25 Years Experience</h5>
+      <p>Modern Landscapes has been around for 25 years, which will have you safe in the knowledge that we've seen it all.</p>
+    </div>
+    <div class="col-md-4 col-12">
+      <img class="benefits-image" src="https://res.cloudinary.com/du0modwwh/image/upload/v1659046664/Customer_Service_w5mwv7.png" alt="Excellent customer service">
+      <h5 class="py-3">Excellent Customer Service</h5>
+      <p>At Modern Landscapes we are known for our superb customer service as can be seen by our testimonials from Joe, Mary and John.</p>
+    </div>
+    <div class="col-md-4 col-12">
+      <img class="benefits-image" src="https://res.cloudinary.com/du0modwwh/image/upload/v1659046664/Quality_ucs1ur.png" alt="Quality service guaranteed">
+      <h5 class="py-3">Quality Guaranteed</h5>
+      <p>Modern Landscapes strive for the very best in quality of work, which can be seen on the our work page.</p>
+    </div>
+  </div>
 </div>
-
 <!-- Testimonials Section -->
 <div class="container-fluid">
-    <div class="row align-items-center justify-content-center text-center">
-        <div class="col-12 py-5">
-            <h3>Don't just take our word for it...</h3>
-        </div>
-        <div class="row p-2 border">
-            <div class="col-12 col-sm-4 d-none d-sm-block">
-                <img class="tesimonal-image" src="https://res.cloudinary.com/du0modwwh/image/upload/v1659046780/joe1_a238zq.jpg" alt="illustration of person">
-                <h5 class="p-2">Joe Bloggs</h5>
-            </div>
-            <div class="col-12 col-sm-8 py-3 px-5 text-start">
-                <i class="fa fa-quote-left"></i>
-                <p>We have used Modern Landscapes services twice over six years and both times have been amazed at the quality and pride that Modern Landscapes take in their work. A garden we once hated is now a garden that we love and appreciate. You could not get a better level of quality, thank you Modern Landscapes.<span class="d-block d-sm-none">- Joe Bloggs</span></p>
-            </div>
-        </div>
-        <div class="row p-2">
-            <div class="col-12 col-sm-8 py-3 px-5 text-start">
-                <i class="fa fa-quote-left"></i>
-                <p>I have been a customer of Modern Landscapes for several years now and every time I require their services they are more than happy to help. Prices are competitive and the quality of work is always superb with no hidden costs!<span class="d-block d-sm-none">- Mary Brown</span></p>
-            </div>
-            <div class="col-12 col-sm-4 py-3 d-none d-sm-block">
-                <img class="tesimonal-image" src="https://res.cloudinary.com/du0modwwh/image/upload/v1659046780/mary1_xju6ft.jpg" alt="illustration of person">
-                <h5 class="p-2">Mary Brown</h5>
-            </div>
-        </div>
-        <div class="row p-2 border">
-            <div class="col-12 col-sm-4 py-4 d-none d-sm-block">
-                <img class="tesimonal-image" src="https://res.cloudinary.com/du0modwwh/image/upload/v1659046780/john1_eiqbu8.jpg" alt="illustration of person">
-                <h5 class="p-2">John Doe</h5>
-            </div>
-            <div class="col-12 col-sm-8 py-4 px-5 text-start">
-                <i class="fa fa-quote-left"></i>
-                <p>I have only availed of Modern Landscapes services once but I was blown away at their professionalism. In appalling weather conditions they carried out work on my garden as if the sun was shining. A complete garden transformation, the patio that Modern Landscapes installed combines quality materials with quality worksmanship.<span class="d-block d-sm-none">- John Doe</span></p>
-            </div>
-        </div>
+  <div class="row align-items-center justify-content-center text-center">
+    <div class="col-12 py-5">
+      <h3>Don't just take our word for it...</h3>
     </div>
+    <div class="row p-2 border">
+      <div class="col-12 col-sm-4 d-none d-sm-block">
+        <img class="tesimonal-image" src="https://res.cloudinary.com/du0modwwh/image/upload/v1659046780/joe1_a238zq.jpg" alt="illustration of person">
+        <h5 class="p-2">Joe Bloggs</h5>
+      </div>
+      <div class="col-12 col-sm-8 py-3 px-5 text-start">
+        <i class="fa fa-quote-left"></i>
+        <p>We have used Modern Landscapes services twice over six years and both times have been amazed at the quality and pride that Modern Landscapes take in their work. A garden we once hated is now a garden that we love and appreciate. You could not get a better level of quality, thank you Modern Landscapes. <span class="d-block d-sm-none">- Joe Bloggs</span>
+        </p>
+      </div>
+    </div>
+    <div class="row p-2">
+      <div class="col-12 col-sm-8 py-3 px-5 text-start">
+        <i class="fa fa-quote-left"></i>
+        <p>I have been a customer of Modern Landscapes for several years now and every time I require their services they are more than happy to help. Prices are competitive and the quality of work is always superb with no hidden costs! <span class="d-block d-sm-none">- Mary Brown</span>
+        </p>
+      </div>
+      <div class="col-12 col-sm-4 py-3 d-none d-sm-block">
+        <img class="tesimonal-image" src="https://res.cloudinary.com/du0modwwh/image/upload/v1659046780/mary1_xju6ft.jpg" alt="illustration of person">
+        <h5 class="p-2">Mary Brown</h5>
+      </div>
+    </div>
+    <div class="row p-2 border">
+      <div class="col-12 col-sm-4 py-4 d-none d-sm-block">
+        <img class="tesimonal-image" src="https://res.cloudinary.com/du0modwwh/image/upload/v1659046780/john1_eiqbu8.jpg" alt="illustration of person">
+        <h5 class="p-2">John Doe</h5>
+      </div>
+      <div class="col-12 col-sm-8 py-4 px-5 text-start">
+        <i class="fa fa-quote-left"></i>
+        <p>I have only availed of Modern Landscapes services once but I was blown away at their professionalism. In appalling weather conditions they carried out work on my garden as if the sun was shining. A complete garden transformation, the patio that Modern Landscapes installed combines quality materials with quality worksmanship. <span class="d-block d-sm-none">- John Doe</span>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- Final call to action section -->
 <div class="container-fluid d-flex justify-content-center py-4 our-work">
-    <div class="row align-items-center text-start">
-        <div class="col-12 col-sm-8">What are you waiting for? Book your free garden consultation today.</div>
-        <div class="col-12 col-sm-4">
-            <a class="text-decoration-none" href="{% url 'booking_home' %}"><button type="button" class="btn btn-success book-btn d-flex justify-content-center our-work-cta-btn">Book Now</button></a>
-        </div>
+  <div class="row align-items-center text-start">
+    <div class="col-12 col-sm-8">What are you waiting for? Book your free garden consultation today.</div>
+    <div class="col-12 col-sm-4">
+      <a class="text-decoration-none" href="{% url 'booking_home' %}">
+        <button type="button" class="btn btn-success book-btn d-flex justify-content-center our-work-cta-btn">Book Now</button>
+      </a>
     </div>
-</div>
-
-{% endblock %}
+  </div>
+</div> {% endblock %}

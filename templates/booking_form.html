@@ -1,23 +1,15 @@
-{% extends "base.html" %}
-{% load static %}
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 <!-- Page title -->
 <div class="container">
-    <div class="col-12 text-center pt-4">
-        <h4>Booking Form</h4>
-    </div>
+  <div class="col-12 text-center pt-4">
+    <h4>Booking Form</h4>
+  </div>
 </div>
-
 <!-- Main booking form displayed here -->
 <div class="container-fluid d-flex justify-content-center booking_form">
-    <div class="col-8 text-start pt-4 form-group ">
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button class="btn book-btn submit-btns">Submit</button>
-        </form>
-    </div>
-</div>
-
-
-{% endblock %}
+  <div class="col-8 text-start pt-4 form-group ">
+    <form method="POST"> {% csrf_token %} {{ form.as_p }}
+      <button class="btn book-btn submit-btns">Submit</button>
+    </form>
+  </div>
+</div> {% endblock %}
