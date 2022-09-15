@@ -32,6 +32,11 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mr-2"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                    {% if request.user.is_staff %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin' %}">Admin</a>
+                    </li>
+                    {% endif %}
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
@@ -46,11 +51,6 @@
 
                     <li class="nav-item d-none d-sm-block"><a class="nav-link p-0" href="{% url 'booking_home' %}"><button type="button" class="btn book-btn d-flex m-0 justify-content-center nav-btn">Book Now</button></a></li>
                     <li class="nav-item mr-2 d-block d-sm-none"><a class="nav-link" href="{% url 'booking_home' %}">Book Here</a></li>
-                    {% if request.user.is_staff %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'admin' %}">Admin</a>
-                    </li>
-                    {% endif %}
                 </ul>
             </div>
         </nav>
