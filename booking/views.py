@@ -100,7 +100,7 @@ def EditBooking(request, item_id):
             return render(request, 'index.html')
     form = DisplayBookingForm(instance=item)
     context = {'form': form}
-    return render(request, 'edit_booking.html', context)
+    return render(request, 'my_booking.html', context)
 
 
 def DeleteBooking(request, item_id):
