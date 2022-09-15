@@ -51,10 +51,14 @@ When on a smaller screen the navigation links become a 'burger' style icon, when
 
 ![Navbar](media/nav-bar.png)
 
+When a staff account is logged in a nav item named "Admin" will appear. When clicked this will bring the staff member to the admin page. From the admin page a staff member can view a contact message and reply via email. They can also add, edit and delete any bookings.
+
+![Navbar when admin logged in](media/nav-bar-admin-logged-in.png)
+
 
 - Home Page/ Hero Image
 
-The home screen features a background image of a large bush and the owner of Modern Landscapes. Accompanying that is a text layover with a Title, subtext and a clear call to action with a book now button below. 
+The home screen features a background image of a large bush and the owner of Modern Landscapes. Accompanying that is a text layover with a title, subtext and a clear call to action with a book now button below. 
 
 ![Home Page/ Hero Image](media/home-page.png)
 
