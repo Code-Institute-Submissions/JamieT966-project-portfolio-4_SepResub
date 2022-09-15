@@ -71,7 +71,6 @@ def MyBooking(request):
         bookings = Booking.objects.filter(email=request.user.email)
         return render(request, 'my_booking.html',{'bookings': bookings})
     reference_matches = None
-    all_bookings = Booking.objects.all()
     if 'book_ref' in request.GET:
         book_ref = request.GET['book_ref']
         reference_matches = Booking.objects.filter(
