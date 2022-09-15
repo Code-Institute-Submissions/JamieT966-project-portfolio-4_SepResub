@@ -23,7 +23,7 @@
             </div>
         </div>
     </div>
-
+    {% endfor %}
 </div> {% elif user.is_authenticated %}
 <!-- If user is logged in, any email that matches that in database, will show bookings for that -->{% for booking in bookings %}
 <div class="container-fluid text-center pt-4 my-booking-box">
