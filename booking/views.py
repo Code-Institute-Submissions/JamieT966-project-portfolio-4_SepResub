@@ -69,7 +69,7 @@ def MyBooking(request):
     """
     if request.user.is_authenticated:
         bookings = Booking.objects.filter(email=request.user.email)
-        return render(request, 'my_booking.html',{'bookings': bookings})
+        return render(request, 'my_booking.html', {'bookings': bookings})
     reference_matches = None
     if 'book_ref' in request.GET:
         book_ref = request.GET['book_ref']
